@@ -4,10 +4,11 @@ import type { AppProps } from "next/app";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
+
     <div className="min-h-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/bg-photo.jpg')" }}>
-      <div className="min-h-screen bg-black/40 p-4 md:p-8">
-        <Component {...pageProps} />
-      </div>
-    </div>
+  <div className="min-h-screen bg-black/40 p-4 md:p-8">
+    <Component {...pageProps} />
+  </div>
+</div>
   );
 }
