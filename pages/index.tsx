@@ -5,8 +5,6 @@ import dietData from "../data/diet.json";
 import workoutPlans from "../data/workouts.json";
 import dynamic from "next/dynamic";
 
-// Safe dynamic imports for recharts components
-import dynamic from "next/dynamic";
 
 // Cast each recharts component to React.FC<any> so props work
 const ResponsiveContainer = dynamic(
