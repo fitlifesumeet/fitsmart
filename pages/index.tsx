@@ -6,16 +6,59 @@ import workoutPlans from "../data/workouts.json";
 import dynamic from "next/dynamic";
 
 // Safe dynamic imports for recharts components
-const ResponsiveContainer = dynamic(() => import("recharts").then((m) => m.ResponsiveContainer as any), { ssr: false });
-const PieChart = dynamic(() => import("recharts").then((m) => m.PieChart as any), { ssr: false });
-const Pie = dynamic(() => import("recharts").then((m) => m.Pie as any), { ssr: false });
-const Cell = dynamic(() => import("recharts").then((m) => m.Cell as any), { ssr: false });
-const Tooltip = dynamic(() => import("recharts").then((m) => m.Tooltip as any), { ssr: false });
-const BarChart = dynamic(() => import("recharts").then((m) => m.BarChart as any), { ssr: false });
-const Bar = dynamic(() => import("recharts").then((m) => m.Bar as any), { ssr: false });
-const XAxis = dynamic(() => import("recharts").then((m) => m.XAxis as any), { ssr: false });
-const YAxis = dynamic(() => import("recharts").then((m) => m.YAxis as any), { ssr: false });
-const CartesianGrid = dynamic(() => import("recharts").then((m) => m.CartesianGrid as any), { ssr: false });
+import dynamic from "next/dynamic";
+
+// Cast each recharts component to React.FC<any> so props work
+const ResponsiveContainer = dynamic(
+  () => import("recharts").then((m) => m.ResponsiveContainer as any),
+  { ssr: false }
+) as React.FC<any>;
+
+const PieChart = dynamic(
+  () => import("recharts").then((m) => m.PieChart as any),
+  { ssr: false }
+) as React.FC<any>;
+
+const Pie = dynamic(
+  () => import("recharts").then((m) => m.Pie as any),
+  { ssr: false }
+) as React.FC<any>;
+
+const Cell = dynamic(
+  () => import("recharts").then((m) => m.Cell as any),
+  { ssr: false }
+) as React.FC<any>;
+
+const Tooltip = dynamic(
+  () => import("recharts").then((m) => m.Tooltip as any),
+  { ssr: false }
+) as React.FC<any>;
+
+const BarChart = dynamic(
+  () => import("recharts").then((m) => m.BarChart as any),
+  { ssr: false }
+) as React.FC<any>;
+
+const Bar = dynamic(
+  () => import("recharts").then((m) => m.Bar as any),
+  { ssr: false }
+) as React.FC<any>;
+
+const XAxis = dynamic(
+  () => import("recharts").then((m) => m.XAxis as any),
+  { ssr: false }
+) as React.FC<any>;
+
+const YAxis = dynamic(
+  () => import("recharts").then((m) => m.YAxis as any),
+  { ssr: false }
+) as React.FC<any>;
+
+const CartesianGrid = dynamic(
+  () => import("recharts").then((m) => m.CartesianGrid as any),
+  { ssr: false }
+) as React.FC<any>;
+
 
 
 type Sex = "male"|"female";
