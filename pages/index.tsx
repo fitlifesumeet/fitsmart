@@ -4,18 +4,19 @@ import Head from "next/head";
 import dietData from "../data/diet.json";
 import workoutPlans from "../data/workouts.json";
 import dynamic from "next/dynamic";
-import type { ComponentType } from "react";
 
-const ResponsiveContainer = dynamic<ComponentType<any>>(() => import("recharts").then(m=>m.ResponsiveContainer), { ssr:false });
-const PieChart = dynamic<ComponentType<any>>(() => import("recharts").then(m=>m.PieChart), { ssr:false });
-const Pie = dynamic<ComponentType<any>>(() => import("recharts").then(m=>m.Pie), { ssr:false });
-const Cell = dynamic<ComponentType<any>>(() => import("recharts").then(m=>m.Cell), { ssr:false });
-const TooltipChart = dynamic<ComponentType<any>>(() => import("recharts").then(m=>m.Tooltip), { ssr:false });
-const BarChart = dynamic<ComponentType<any>>(() => import("recharts").then(m=>m.BarChart), { ssr:false });
-const Bar = dynamic<ComponentType<any>>(() => import("recharts").then(m=>m.Bar), { ssr:false });
-const XAxis = dynamic<ComponentType<any>>(() => import("recharts").then(m=>m.XAxis), { ssr:false });
-const YAxis = dynamic<ComponentType<any>>(() => import("recharts").then(m=>m.YAxis), { ssr:false });
-const CartesianGrid = dynamic<ComponentType<any>>(() => import("recharts").then(m=>m.CartesianGrid), { ssr:false });
+// Safe dynamic imports for recharts components
+const ResponsiveContainer = dynamic(() => import("recharts").then((m) => m.ResponsiveContainer as any), { ssr: false });
+const PieChart = dynamic(() => import("recharts").then((m) => m.PieChart as any), { ssr: false });
+const Pie = dynamic(() => import("recharts").then((m) => m.Pie as any), { ssr: false });
+const Cell = dynamic(() => import("recharts").then((m) => m.Cell as any), { ssr: false });
+const Tooltip = dynamic(() => import("recharts").then((m) => m.Tooltip as any), { ssr: false });
+const BarChart = dynamic(() => import("recharts").then((m) => m.BarChart as any), { ssr: false });
+const Bar = dynamic(() => import("recharts").then((m) => m.Bar as any), { ssr: false });
+const XAxis = dynamic(() => import("recharts").then((m) => m.XAxis as any), { ssr: false });
+const YAxis = dynamic(() => import("recharts").then((m) => m.YAxis as any), { ssr: false });
+const CartesianGrid = dynamic(() => import("recharts").then((m) => m.CartesianGrid as any), { ssr: false });
+
 
 type Sex = "male"|"female";
 type Goal = "fat_loss"|"muscle_gain"|"maintain";
