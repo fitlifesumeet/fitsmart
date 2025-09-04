@@ -1,14 +1,41 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root { --card: rgba(255,255,255,0.85); }
-html, body, #__next { height: 100%; }
+:root {
+  --card: rgba(255,255,255,0.85);
+}
 
-.glass { background: var(--card); backdrop-filter: saturate(140%) blur(10px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-.kpi { border-radius: 1rem; padding: 1rem; border: 1px solid rgba(0,0,0,0.08); background: white; }
-.card { border-radius: 1rem; padding: 1rem; border: 1px solid rgba(0,0,0,0.08); background: white; }
-.input, .select { border: 1px solid rgba(0,0,0,0.15); border-radius: 0.75rem; padding: 0.5rem 0.75rem; width: 100%; }
-.grid-gap { display: grid; gap: 1rem; }
-.section-title { font-size: 1.25rem; font-weight: 600; }
+html, body, #__next {
+  height: 100%;
+}
+
+.glass {
+  background: var(--card);
+  backdrop-filter: saturate(140%) blur(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.kpi, .card {
+  border-radius: 1rem;
+  padding: 1rem;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: white;
+}
+
+.input, .select {
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  width: 100%;
+}
+
+.grid-gap {
+  display: grid;
+  gap: 1rem;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
