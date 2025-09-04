@@ -4,6 +4,7 @@ import Head from "next/head";
 import dietData from "../data/diet.json";
 import workoutPlans from "../data/workouts.json";
 import dynamic from "next/dynamic";
+import type { ComponentType } from "react";
 
 const ResponsiveContainer = dynamic<ComponentType<any>>(() => import("recharts").then(m=>m.ResponsiveContainer), { ssr:false });
 const PieChart = dynamic<ComponentType<any>>(() => import("recharts").then(m=>m.PieChart), { ssr:false });
