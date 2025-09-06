@@ -6,7 +6,7 @@ import workoutPlans from "../data/workouts.json";
 
 // ---------------- Types & Helpers ----------------
 type Sex = "male" | "female";
-type Goal = "fat_loss" | "muscle_gain" | "maintain";
+type Goal = "fat_loss" | "muscle_gain" | "maintain" | "endurance";
 type DietPref =
   | "balanced"
   | "indian_veg"
@@ -407,18 +407,14 @@ export default function Home() {
             </div>
             <div className="kpi">
               <div className="text-sm text-slate-600">Target Calories</div>
-              <div className="text-2xl font-semibold">
-                {metrics.targetCals} kcal
-              </div>
+              <div className="text-2xl font-semibold">{metrics.targetCals} kcal</div>
               <div className="text-xs text-slate-500">
                 (daily change ≈ {metrics.dailyChange} kcal)
               </div>
             </div>
             <div className="kpi">
               <div className="text-sm text-slate-600">Meals</div>
-              <div className="text-2xl font-semibold">
-                {form.mealsPerDay} / day
-              </div>
+              <div className="text-2xl font-semibold">{form.mealsPerDay} / day</div>
             </div>
           </div>
 
@@ -510,9 +506,7 @@ export default function Home() {
                   <div className="text-sm text-slate-600">
                     {m.calories} kcal • {m.protein}P / {m.carbs}C / {m.fat}F
                   </div>
-                  <div className="text-xs text-slate-500">
-                    {m.tags.join(", ")}
-                  </div>
+                  <div className="text-xs text-slate-500">{m.tags.join(", ")}</div>
                 </div>
               ))}
             </div>
@@ -526,13 +520,11 @@ export default function Home() {
                 {workouts.map((w, i) => (
                   <div key={i} className="rounded-xl border p-3">
                     {/* Title */}
-                    <div className="font-medium text-lg">
-                      {w.title ?? w.name ?? `Plan ${i + 1}`}
-                    </div>
+                    <div className="font-medium text-lg">{w.title}</div>
 
-                    {/* Goal + Level */}
+                    {/* Goal + Level + Type */}
                     <div className="text-xs text-slate-500 mb-1">
-                      Goal: {w.goal} | Level: {w.level}
+                      Goal: {w.goal} | Level: {w.level} | Type: {w.type}
                     </div>
 
                     {/* Description */}
