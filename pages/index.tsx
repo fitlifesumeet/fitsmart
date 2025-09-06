@@ -407,14 +407,18 @@ export default function Home() {
             </div>
             <div className="kpi">
               <div className="text-sm text-slate-600">Target Calories</div>
-              <div className="text-2xl font-semibold">{metrics.targetCals} kcal</div>
+              <div className="text-2xl font-semibold">
+                {metrics.targetCals} kcal
+              </div>
               <div className="text-xs text-slate-500">
                 (daily change ≈ {metrics.dailyChange} kcal)
               </div>
             </div>
             <div className="kpi">
               <div className="text-sm text-slate-600">Meals</div>
-              <div className="text-2xl font-semibold">{form.mealsPerDay} / day</div>
+              <div className="text-2xl font-semibold">
+                {form.mealsPerDay} / day
+              </div>
             </div>
           </div>
 
@@ -506,7 +510,9 @@ export default function Home() {
                   <div className="text-sm text-slate-600">
                     {m.calories} kcal • {m.protein}P / {m.carbs}C / {m.fat}F
                   </div>
-                  <div className="text-xs text-slate-500">{m.tags.join(", ")}</div>
+                  <div className="text-xs text-slate-500">
+                    {m.tags.join(", ")}
+                  </div>
                 </div>
               ))}
             </div>
@@ -519,20 +525,51 @@ export default function Home() {
               <div className="grid md:grid-cols-2 gap-3">
                 {workouts.map((w, i) => (
                   <div key={i} className="rounded-xl border p-3">
-                    <div className="font-medium">{w.title ?? w.name ?? `Plan ${i + 1}`}</div>
-                    <div className="text-sm text-slate-600">{w.description ?? w.desc ?? ""}</div>
+                    {/* Title */}
+                    <div className="font-medium text-lg">
+                      {w.title ?? w.name ?? `Plan ${i + 1}`}
+                    </div>
+
+                    {/* Goal + Level */}
+                    <div className="text-xs text-slate-500 mb-1">
+                      Goal: {w.goal} | Level: {w.level}
+                    </div>
+
+                    {/* Description */}
+                    {w.description || w.desc ? (
+                      <div className="text-sm text-slate-600 mb-2">
+                        {w.description ?? w.desc}
+                      </div>
+                    ) : null}
+
+                    {/* Exercises */}
+                    {w.exercises && w.exercises.length > 0 ? (
+                      <ul className="mt-2 space-y-1 text-sm">
+                        {w.exercises.map((ex: any, idx: number) => (
+                          <li
+                            key={idx}
+                            className="flex justify-between border-t pt-1"
+                          >
+                            <span className="font-medium">{ex.name}</span>
+                            <span className="text-slate-600">
+                              {ex.sets} × {ex.reps}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <div className="text-xs text-slate-400 italic">
+                        No exercises listed.
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
             ) : (
-              <p className="text-sm text-slate-500">No workouts found for this goal/level.</p>
+              <p className="text-sm text-slate-500">
+                No workouts found for this goal/level.
+              </p>
             )}
-          </div>
-
-          {/* Notes */}
-          <div className="card mt-4">
-            <h3 className="section-title mb-3">Notes</h3>
-            <textarea className="input w-full" rows={4} placeholder="Write your fitness notes here..." />
           </div>
         </section>
       </main>
