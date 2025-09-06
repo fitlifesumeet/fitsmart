@@ -4,7 +4,8 @@ import Head from "next/head";
 import dietData from "../data/diet.json";
 import workoutPlans from "../data/workouts.json";
 
-// ---------------- Types & Helpers ----------------
+/* ===================== Types & Helpers ===================== */
+
 type Sex = "male" | "female";
 type Goal = "fat_loss" | "muscle_gain" | "maintain" | "endurance";
 type DietPref =
@@ -58,14 +59,13 @@ function dailyCaloriesForTarget({
   const deltaKg = targetWeight - currentWeight;
   const totalKcalChange = deltaKg * 7700;
   const dailyChange = totalKcalChange / days;
+
+  // cap the daily change based on goal to keep things sane
   const cap =
-    explicitGoal === "fat_loss"
-      ? 1000
-      : explicitGoal === "muscle_gain"
-      ? 600
-      : 0;
+    explicitGoal === "fat_loss" ? 1000 : explicitGoal === "muscle_gain" ? 600 : 0;
   const adjustedChange = clamp(dailyChange, -cap, cap);
   const targetCals = Math.round(tdee + adjustedChange);
+
   return {
     bmr: Math.round(bmr),
     tdee: Math.round(tdee),
@@ -106,6 +106,7 @@ function buildMealPlan({
   const perMeal = totalCals / mealsPerDay;
   const plan: Meal[] = [];
   const pool = [...meals];
+
   for (let i = 0; i < mealsPerDay; i++) {
     let bestIdx = 0;
     let bestDiff = Infinity;
@@ -119,14 +120,23 @@ function buildMealPlan({
     plan.push(pool[bestIdx]);
     pool.splice(bestIdx, 1);
   }
-  const total = plan.reduce((s, m) => s + m.calories, 0);
-  const protein = plan.reduce((s, m) => s + m.protein, 0);
-  const carbs = plan.reduce((s, m) => s + m.carbs, 0);
-  const fat = plan.reduce((s, m) => s + m.fat, 0);
-  return { plan, totals: { calories: total, protein, carbs, fat } };
+
+  const totals = plan.reduce(
+    (acc, m) => {
+      acc.calories += m.calories;
+      acc.protein += m.protein;
+      acc.carbs += m.carbs;
+      acc.fat += m.fat;
+      return acc;
+    },
+    { calories: 0, protein: 0, carbs: 0, fat: 0 }
+  );
+
+  return { plan, totals };
 }
 
-// ---------------- Main Component ----------------
+/* ===================== Main Component ===================== */
+
 export default function Home() {
   const [form, setForm] = useState({
     name: "",
@@ -134,7 +144,7 @@ export default function Home() {
     age: 30,
     heightCm: 175,
     weightKg: 90,
-    activity: "moderate" as keyof typeof activityFactors,
+    activity: "light" as keyof typeof activityFactors, // keep in sync with select below
     targetWeight: 75,
     weeks: 16,
     goal: "fat_loss" as Goal,
@@ -143,7 +153,7 @@ export default function Home() {
     restrictions: "",
   });
 
-  // Recharts module will be loaded client-side
+  /** ---- Lazy-load Recharts on client only (prevents SSR mismatch) ---- */
   const [Recharts, setRecharts] = useState<any | null>(null);
   useEffect(() => {
     let mounted = true;
@@ -159,6 +169,7 @@ export default function Home() {
     };
   }, []);
 
+  /** ---- Metrics ---- */
   const metrics = useMemo(
     () =>
       dailyCaloriesForTarget({
@@ -175,6 +186,7 @@ export default function Home() {
     [form]
   );
 
+  /** ---- Allergy/Restriction handling ---- */
   const allergens = useMemo(
     () =>
       form.restrictions
@@ -184,6 +196,7 @@ export default function Home() {
     [form.restrictions]
   );
 
+  /** ---- Meals (filtered) ---- */
   const mealsFiltered = useMemo(() => {
     const base = filterMeals(dietData as unknown as Meal[], form.dietPref);
     return base.filter(
@@ -194,6 +207,7 @@ export default function Home() {
     );
   }, [form.dietPref, allergens]);
 
+  /** ---- Meal Plan (balanced to target calories) ---- */
   const mealPlan = useMemo(
     () =>
       buildMealPlan({
@@ -204,16 +218,35 @@ export default function Home() {
     [mealsFiltered, metrics.targetCals, form.mealsPerDay]
   );
 
+  /** ---- Level from timeframe (as in your original) ---- */
   const level =
     form.weeks <= 8 ? "beginner" : form.weeks <= 20 ? "intermediate" : "advanced";
 
+  /** ---- Workout filtering + smart fallbacks ----
+   * Your JSON uses `goal`, `level`, and `blocks` (not `exercises`).
+   * Also, you have `general_fitness` for "maintain".
+   * We filter by goal+level; if none, we fall back to goal only, then to level only, then show all.
+   */
   const workouts = useMemo(() => {
     const all = workoutPlans as any[];
-    return all.filter(
-      (w) =>
-        w.goal === (form.goal === "maintain" ? "general_fitness" : form.goal) &&
-        w.level === level
+    const normalizedGoal =
+      form.goal === "maintain" ? "general_fitness" : form.goal;
+
+    let filtered = all.filter(
+      (w) => w.goal === normalizedGoal && w.level === level
     );
+
+    if (!filtered.length) {
+      filtered = all.filter((w) => w.goal === normalizedGoal);
+    }
+    if (!filtered.length) {
+      filtered = all.filter((w) => w.level === level);
+    }
+    if (!filtered.length) {
+      filtered = all;
+    }
+
+    return filtered;
   }, [form.goal, level]);
 
   const macroData = [
@@ -222,16 +255,20 @@ export default function Home() {
     { name: "Fat (g)", value: mealPlan.totals.fat },
   ];
 
+  /* ===================== JSX ===================== */
+
   return (
     <>
       <Head>
         <title>Smart Fit Planner</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
+
       <main className="max-w-7xl mx-auto grid-gap md:grid-cols-3">
-        {/* Profile Form */}
+        {/* ===== Left: Profile Form ===== */}
         <section className="md:col-span-1 glass rounded-2xl p-4 md:p-6">
           <h2 className="section-title mb-4">Your Profile</h2>
+
           <div className="grid gap-3">
             {/* Name */}
             <label className="text-sm">
@@ -243,6 +280,7 @@ export default function Home() {
                 placeholder="Your name"
               />
             </label>
+
             {/* Sex */}
             <label className="text-sm">
               Sex
@@ -257,6 +295,7 @@ export default function Home() {
                 <option value="female">Female</option>
               </select>
             </label>
+
             {/* Age & Height */}
             <div className="grid grid-cols-2 gap-3">
               <label className="text-sm">
@@ -282,6 +321,7 @@ export default function Home() {
                 />
               </label>
             </div>
+
             {/* Weight & Target */}
             <div className="grid grid-cols-2 gap-3">
               <label className="text-sm">
@@ -307,6 +347,7 @@ export default function Home() {
                 />
               </label>
             </div>
+
             {/* Timeframe & Activity */}
             <div className="grid grid-cols-2 gap-3">
               <label className="text-sm">
@@ -341,6 +382,24 @@ export default function Home() {
                 </select>
               </label>
             </div>
+
+            {/* Goal (now visible) */}
+            <label className="text-sm">
+              Goal
+              <select
+                className="select mt-1"
+                value={form.goal}
+                onChange={(e) =>
+                  setForm({ ...form, goal: e.target.value as Goal })
+                }
+              >
+                <option value="fat_loss">Fat Loss</option>
+                <option value="muscle_gain">Muscle Gain</option>
+                <option value="maintain">Maintain / General Fitness</option>
+                <option value="endurance">Endurance</option>
+              </select>
+            </label>
+
             {/* Meals per day & Diet */}
             <div className="grid grid-cols-2 gap-3">
               <label className="text-sm">
@@ -379,6 +438,7 @@ export default function Home() {
                 </select>
               </label>
             </div>
+
             {/* Restrictions */}
             <label className="text-sm">
               Restrictions (comma separated)
@@ -394,8 +454,9 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Results Section */}
+        {/* ===== Right: Results ===== */}
         <section className="md:col-span-2 grid-gap">
+          {/* KPIs */}
           <div className="grid md:grid-cols-4 gap-4">
             <div className="kpi">
               <div className="text-sm text-slate-600">BMR</div>
@@ -506,7 +567,9 @@ export default function Home() {
                   <div className="text-sm text-slate-600">
                     {m.calories} kcal • {m.protein}P / {m.carbs}C / {m.fat}F
                   </div>
-                  <div className="text-xs text-slate-500">{m.tags.join(", ")}</div>
+                  <div className="text-xs text-slate-500">
+                    {m.tags.join(", ")}
+                  </div>
                 </div>
               ))}
             </div>
@@ -515,37 +578,88 @@ export default function Home() {
           {/* Workout Plan */}
           <div className="card mt-4">
             <h3 className="section-title mb-3">Workout Plan</h3>
+
+            {/* Little hint to explain fallback behavior */}
+            <div className="text-xs text-slate-500 mb-2">
+              Showing workouts for <b>{form.goal}</b> &ldquo;{level}&rdquo;. If no exact
+              match exists in your data, we show the closest matches.
+            </div>
+
             {workouts.length > 0 ? (
               <div className="grid md:grid-cols-2 gap-3">
-                {workouts.map((w, i) => (
-                  <div key={i} className="rounded-xl border p-3">
+                {workouts.map((w: any, i: number) => (
+                  <div key={w.id ?? i} className="rounded-xl border p-3">
                     {/* Title */}
-                    <div className="font-medium text-lg">{w.title}</div>
-
-                    {/* Goal + Level + Type */}
-                    <div className="text-xs text-slate-500 mb-1">
-                      Goal: {w.goal} | Level: {w.level} | Type: {w.type}
+                    <div className="font-medium text-lg">
+                      {w.title ?? w.name ?? `Plan ${i + 1}`}
                     </div>
 
-                    {/* Description */}
-                    {w.description || w.desc ? (
-                      <div className="text-sm text-slate-600 mb-2">
-                        {w.description ?? w.desc}
-                      </div>
-                    ) : null}
+                    {/* Meta */}
+                    <div className="text-xs text-slate-500 mb-1">
+                      Goal: {w.goal} | Level: {w.level}
+                      {w.type ? ` | Type: ${w.type}` : ""}
+                    </div>
 
-                    {/* Exercises */}
-                    {w.exercises && w.exercises.length > 0 ? (
+                    {/* Optional link */}
+                    {w.link && (
+                      <a
+                        href={w.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs text-blue-600 underline"
+                      >
+                        Reference
+                      </a>
+                    )}
+
+                    {/* Blocks (your JSON) */}
+                    {Array.isArray(w.blocks) && w.blocks.length > 0 ? (
+                      <ul className="mt-2 space-y-1 text-sm">
+                        {w.blocks.map((block: any, idx: number) => (
+                          <li key={idx} className="border-t pt-1">
+                            <div className="flex items-center justify-between">
+                              <span className="font-medium">{block.name}</span>
+                              <span className="text-slate-600">
+                                {block.sets
+                                  ? block.sets
+                                  : block.duration
+                                  ? block.duration
+                                  : ""}
+                                {block.rest ? ` • Rest: ${block.rest}` : ""}
+                              </span>
+                            </div>
+
+                            {block.tip && (
+                              <div className="text-xs text-slate-500">
+                                Tip: {block.tip}
+                              </div>
+                            )}
+
+                            {block.link && (
+                              <a
+                                href={block.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-xs text-blue-500 underline"
+                              >
+                                Demo
+                              </a>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    ) : // In case some items still use `exercises`, render them too.
+                    Array.isArray(w.exercises) && w.exercises.length > 0 ? (
                       <ul className="mt-2 space-y-1 text-sm">
                         {w.exercises.map((ex: any, idx: number) => (
-                          <li
-                            key={idx}
-                            className="flex justify-between border-t pt-1"
-                          >
-                            <span className="font-medium">{ex.name}</span>
-                            <span className="text-slate-600">
-                              {ex.sets} × {ex.reps}
-                            </span>
+                          <li key={idx} className="border-t pt-1">
+                            <div className="flex items-center justify-between">
+                              <span className="font-medium">{ex.name}</span>
+                              <span className="text-slate-600">
+                                {ex.sets} × {ex.reps}
+                                {ex.rest ? ` • Rest: ${ex.rest}` : ""}
+                              </span>
+                            </div>
                           </li>
                         ))}
                       </ul>
@@ -562,6 +676,16 @@ export default function Home() {
                 No workouts found for this goal/level.
               </p>
             )}
+          </div>
+
+          {/* Notes */}
+          <div className="card mt-4">
+            <h3 className="section-title mb-3">Notes</h3>
+            <textarea
+              className="input w-full"
+              rows={4}
+              placeholder="Write your fitness notes here..."
+            />
           </div>
         </section>
       </main>
