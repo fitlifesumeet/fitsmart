@@ -1,148 +1,27 @@
-[
-  {
-    "id": "m26",
-    "name": "Rajma + Brown Rice",
-    "calories": 590,
-    "protein": 24,
-    "carbs": 92,
-    "fat": 12,
-    "link": "https://www.tarladalal.com/Rajma-Chawal-Recipe-39933r",
-    "tags": [
-      "indian_veg",
-      "vegan",
-      "lunch",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m27",
-    "name": "Moong Dal Cheela + Green Chutney",
-    "calories": 380,
-    "protein": 20,
-    "carbs": 42,
-    "fat": 10,
-    "link": "https://www.tarladalal.com/Moong-Dal-Cheela-Recipe-39364r",
-    "tags": [
-      "indian_veg",
-      "vegan",
-      "breakfast",
-      "snack"
-    ]
-  },
-  {
-    "id": "m28",
-    "name": "Vegetable Pulao + Raita",
-    "calories": 540,
-    "protein": 18,
-    "carbs": 82,
-    "fat": 14,
-    "link": "https://www.tarladalal.com/Vegetable-Pulao-Recipe-38901r",
-    "tags": [
-      "indian_veg",
-      "balanced",
-      "lunch",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m29",
-    "name": "Hummus + Whole Wheat Pita",
-    "calories": 420,
-    "protein": 14,
-    "carbs": 50,
-    "fat": 16,
-    "link": "https://www.bbcgoodfood.com/recipes/hummus",
-    "tags": [
-      "vegan",
-      "snack",
-      "balanced"
-    ]
-  },
-  {
-    "id": "m30",
-    "name": "Grilled Eggplant + Couscous",
-    "calories": 480,
-    "protein": 18,
-    "carbs": 62,
-    "fat": 16,
-    "link": "https://www.eatingwell.com/recipe/249987/grilled-eggplant",
-    "tags": [
-      "vegan",
-      "balanced",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m31",
-    "name": "Chicken Tikka + Salad",
-    "calories": 540,
-    "protein": 46,
-    "carbs": 18,
-    "fat": 28,
-    "link": "https://www.bbcgoodfood.com/recipes/chicken-tikka",
-    "tags": [
-      "indian_nonveg",
-      "nonveg_global",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m32",
-    "name": "Egg White Omelette + Toast",
-    "calories": 380,
-    "protein": 28,
-    "carbs": 28,
-    "fat": 12,
-    "link": "https://www.eatingwell.com/recipe/270523/egg-white-omelet",
-    "tags": [
-      "breakfast",
-      "balanced",
-      "nonveg_global"
-    ]
-  },
-  {
-    "id": "m33",
-    "name": "Vegetable Khichdi",
-    "calories": 460,
-    "protein": 18,
-    "carbs": 72,
-    "fat": 10,
-    "link": "https://www.tarladalal.com/Vegetable-Khichdi-38890r",
-    "tags": [
-      "indian_veg",
-      "vegan",
-      "balanced",
-      "lunch",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m34",
-    "name": "Minestrone Soup + Whole Wheat Bread",
-    "calories": 360,
-    "protein": 14,
-    "carbs": 50,
-    "fat": 10,
-    "link": "https://www.bbcgoodfood.com/recipes/minestrone-soup",
-    "tags": [
-      "vegan",
-      "soup",
-      "balanced",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m35",
-    "name": "Oats + Peanut Butter Bowl",
-    "calories": 420,
-    "protein": 20,
-    "carbs": 55,
-    "fat": 14,
-    "link": "https://www.eatingwell.com/recipe/267236/oatmeal-with-peanut-butter",
-    "tags": [
-      "vegan",
-      "breakfast",
-      "balanced"
-    ]
-  }
-]
+{
+  "id": "m31",
+  "name": "Chicken Tikka + Salad",
+  "calories": 540,
+  "protein": 46,
+  "carbs": 18,
+  "fat": 28,
+  "link": "https://www.bbcgoodfood.com/recipes/chicken-tikka",
+  "tags": [
+    "indian_non_veg",
+    "dinner"
+  ]
+},
+{
+  "id": "m32",
+  "name": "Egg White Omelette + Toast",
+  "calories": 380,
+  "protein": 28,
+  "carbs": 28,
+  "fat": 12,
+  "link": "https://www.eatingwell.com/recipe/270523/egg-white-omelet",
+  "tags": [
+    "global_non_veg",
+    "breakfast",
+    "balanced"
+  ]
+}
