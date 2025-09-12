@@ -1,27 +1,1660 @@
-{
-  "id": "m31",
-  "name": "Chicken Tikka + Salad",
-  "calories": 540,
-  "protein": 46,
-  "carbs": 18,
-  "fat": 28,
-  "link": "https://www.bbcgoodfood.com/recipes/chicken-tikka",
-  "tags": [
-    "indian_non_veg",
-    "dinner"
-  ]
-},
-{
-  "id": "m32",
-  "name": "Egg White Omelette + Toast",
-  "calories": 380,
-  "protein": 28,
-  "carbs": 28,
-  "fat": 12,
-  "link": "https://www.eatingwell.com/recipe/270523/egg-white-omelet",
-  "tags": [
-    "global_non_veg",
-    "breakfast",
-    "balanced"
-  ]
-}
+[
+  {
+    "id": "m26",
+    "name": "Rajma + Brown Rice",
+    "calories": 590,
+    "protein": 24,
+    "carbs": 92,
+    "fat": 12,
+    "link": "https://www.tarladalal.com/Rajma-Chawal-Recipe-39933r",
+    "tags": [
+      "indian_veg",
+      "vegan",
+      "lunch",
+      "dinner"
+    ]
+  },
+  {
+    "id": "m27",
+    "name": "Moong Dal Cheela + Green Chutney",
+    "calories": 380,
+    "protein": 20,
+    "carbs": 42,
+    "fat": 10,
+    "link": "https://www.tarladalal.com/Moong-Dal-Cheela-Recipe-39364r",
+    "tags": [
+      "indian_veg",
+      "vegan",
+      "breakfast",
+      "snack"
+    ]
+  },
+  {
+    "id": "m28",
+    "name": "Vegetable Pulao + Raita",
+    "calories": 540,
+    "protein": 18,
+    "carbs": 82,
+    "fat": 14,
+    "link": "https://www.tarladalal.com/Vegetable-Pulao-Recipe-38901r",
+    "tags": [
+      "indian_veg",
+      "balanced",
+      "lunch",
+      "dinner"
+    ]
+  },
+  {
+    "id": "m29",
+    "name": "Hummus + Whole Wheat Pita",
+    "calories": 420,
+    "protein": 14,
+    "carbs": 50,
+    "fat": 16,
+    "link": "https://www.bbcgoodfood.com/recipes/hummus",
+    "tags": [
+      "vegan",
+      "snack",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m30",
+    "name": "Grilled Eggplant + Couscous",
+    "calories": 480,
+    "protein": 18,
+    "carbs": 62,
+    "fat": 16,
+    "link": "https://www.eatingwell.com/recipe/249987/grilled-eggplant",
+    "tags": [
+      "vegan",
+      "balanced",
+      "dinner"
+    ]
+  },
+  {
+    "id": "m31",
+    "name": "Chicken Tikka + Salad",
+    "calories": 540,
+    "protein": 46,
+    "carbs": 18,
+    "fat": 28,
+    "link": "https://www.bbcgoodfood.com/recipes/chicken-tikka",
+    "tags": [
+      "indian_non_veg",
+      "dinner"
+    ]
+  },
+  {
+    "id": "m32",
+    "name": "Egg White Omelette + Toast",
+    "calories": 380,
+    "protein": 28,
+    "carbs": 28,
+    "fat": 12,
+    "link": "https://www.eatingwell.com/recipe/270523/egg-white-omelet",
+    "tags": [
+      "global_non_veg",
+      "breakfast",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m33",
+    "name": "Vegetable Khichdi",
+    "calories": 460,
+    "protein": 18,
+    "carbs": 72,
+    "fat": 10,
+    "link": "https://www.tarladalal.com/Vegetable-Khichdi-38890r",
+    "tags": [
+      "indian_veg",
+      "vegan",
+      "balanced",
+      "lunch",
+      "dinner"
+    ]
+  },
+  {
+    "id": "m34",
+    "name": "Minestrone Soup + Whole Wheat Bread",
+    "calories": 360,
+    "protein": 14,
+    "carbs": 50,
+    "fat": 10,
+    "link": "https://www.bbcgoodfood.com/recipes/minestrone-soup",
+    "tags": [
+      "vegan",
+      "soup",
+      "balanced",
+      "dinner"
+    ]
+  },
+  {
+    "id": "m35",
+    "name": "Oats + Peanut Butter Bowl",
+    "calories": 420,
+    "protein": 20,
+    "carbs": 55,
+    "fat": 14,
+    "link": "https://www.eatingwell.com/recipe/267236/oatmeal-with-peanut-butter",
+    "tags": [
+      "vegan",
+      "breakfast",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m36",
+    "name": "Paneer Bhurji + Roti",
+    "calories": 480,
+    "protein": 28,
+    "carbs": 38,
+    "fat": 18,
+    "link": "https://www.tarladalal.com/paneer-bhurji-+-roti",
+    "tags": [
+      "indian_veg",
+      "lunch",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m37",
+    "name": "Masala Dosa + Sambar",
+    "calories": 520,
+    "protein": 16,
+    "carbs": 80,
+    "fat": 12,
+    "link": "https://www.bbcgoodfood.com/recipes/masala-dosa-+-sambar",
+    "tags": [
+      "indian_veg",
+      "breakfast",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m38",
+    "name": "Grilled Salmon + Quinoa",
+    "calories": 560,
+    "protein": 42,
+    "carbs": 38,
+    "fat": 20,
+    "link": "https://www.eatingwell.com/recipe/grilled-salmon-+-quinoa",
+    "tags": [
+      "global_non_veg",
+      "dinner",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m39",
+    "name": "Vegan Buddha Bowl",
+    "calories": 500,
+    "protein": 22,
+    "carbs": 68,
+    "fat": 14,
+    "link": "https://www.tarladalal.com/vegan-buddha-bowl",
+    "tags": [
+      "vegan",
+      "lunch",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m40",
+    "name": "Caesar Salad (Chicken)",
+    "calories": 420,
+    "protein": 36,
+    "carbs": 22,
+    "fat": 18,
+    "link": "https://www.bbcgoodfood.com/recipes/caesar-salad-(chicken)",
+    "tags": [
+      "global_non_veg",
+      "salad",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m41",
+    "name": "Greek Yogurt + Berries",
+    "calories": 260,
+    "protein": 18,
+    "carbs": 30,
+    "fat": 6,
+    "link": "https://www.eatingwell.com/recipe/greek-yogurt-+-berries",
+    "tags": [
+      "balanced",
+      "snack"
+    ]
+  },
+  {
+    "id": "m42",
+    "name": "Protein Shake (Banana + Whey)",
+    "calories": 320,
+    "protein": 28,
+    "carbs": 32,
+    "fat": 6,
+    "link": "https://www.tarladalal.com/protein-shake-(banana-+-whey)",
+    "tags": [
+      "balanced",
+      "shake"
+    ]
+  },
+  {
+    "id": "m43",
+    "name": "Lentil Soup + Brown Bread",
+    "calories": 400,
+    "protein": 22,
+    "carbs": 56,
+    "fat": 8,
+    "link": "https://www.bbcgoodfood.com/recipes/lentil-soup-+-brown-bread",
+    "tags": [
+      "vegan",
+      "soup",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m44",
+    "name": "Paneer Bhurji + Roti",
+    "calories": 480,
+    "protein": 28,
+    "carbs": 38,
+    "fat": 18,
+    "link": "https://www.eatingwell.com/recipe/paneer-bhurji-+-roti",
+    "tags": [
+      "indian_veg",
+      "lunch",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m45",
+    "name": "Masala Dosa + Sambar",
+    "calories": 520,
+    "protein": 16,
+    "carbs": 80,
+    "fat": 12,
+    "link": "https://www.tarladalal.com/masala-dosa-+-sambar",
+    "tags": [
+      "indian_veg",
+      "breakfast",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m46",
+    "name": "Grilled Salmon + Quinoa",
+    "calories": 560,
+    "protein": 42,
+    "carbs": 38,
+    "fat": 20,
+    "link": "https://www.bbcgoodfood.com/recipes/grilled-salmon-+-quinoa",
+    "tags": [
+      "global_non_veg",
+      "dinner",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m47",
+    "name": "Vegan Buddha Bowl",
+    "calories": 500,
+    "protein": 22,
+    "carbs": 68,
+    "fat": 14,
+    "link": "https://www.eatingwell.com/recipe/vegan-buddha-bowl",
+    "tags": [
+      "vegan",
+      "lunch",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m48",
+    "name": "Caesar Salad (Chicken)",
+    "calories": 420,
+    "protein": 36,
+    "carbs": 22,
+    "fat": 18,
+    "link": "https://www.tarladalal.com/caesar-salad-(chicken)",
+    "tags": [
+      "global_non_veg",
+      "salad",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m49",
+    "name": "Greek Yogurt + Berries",
+    "calories": 260,
+    "protein": 18,
+    "carbs": 30,
+    "fat": 6,
+    "link": "https://www.bbcgoodfood.com/recipes/greek-yogurt-+-berries",
+    "tags": [
+      "balanced",
+      "snack"
+    ]
+  },
+  {
+    "id": "m50",
+    "name": "Protein Shake (Banana + Whey)",
+    "calories": 320,
+    "protein": 28,
+    "carbs": 32,
+    "fat": 6,
+    "link": "https://www.eatingwell.com/recipe/protein-shake-(banana-+-whey)",
+    "tags": [
+      "balanced",
+      "shake"
+    ]
+  },
+  {
+    "id": "m51",
+    "name": "Lentil Soup + Brown Bread",
+    "calories": 400,
+    "protein": 22,
+    "carbs": 56,
+    "fat": 8,
+    "link": "https://www.tarladalal.com/lentil-soup-+-brown-bread",
+    "tags": [
+      "vegan",
+      "soup",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m52",
+    "name": "Paneer Bhurji + Roti",
+    "calories": 480,
+    "protein": 28,
+    "carbs": 38,
+    "fat": 18,
+    "link": "https://www.bbcgoodfood.com/recipes/paneer-bhurji-+-roti",
+    "tags": [
+      "indian_veg",
+      "lunch",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m53",
+    "name": "Masala Dosa + Sambar",
+    "calories": 520,
+    "protein": 16,
+    "carbs": 80,
+    "fat": 12,
+    "link": "https://www.eatingwell.com/recipe/masala-dosa-+-sambar",
+    "tags": [
+      "indian_veg",
+      "breakfast",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m54",
+    "name": "Grilled Salmon + Quinoa",
+    "calories": 560,
+    "protein": 42,
+    "carbs": 38,
+    "fat": 20,
+    "link": "https://www.tarladalal.com/grilled-salmon-+-quinoa",
+    "tags": [
+      "global_non_veg",
+      "dinner",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m55",
+    "name": "Vegan Buddha Bowl",
+    "calories": 500,
+    "protein": 22,
+    "carbs": 68,
+    "fat": 14,
+    "link": "https://www.bbcgoodfood.com/recipes/vegan-buddha-bowl",
+    "tags": [
+      "vegan",
+      "lunch",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m56",
+    "name": "Caesar Salad (Chicken)",
+    "calories": 420,
+    "protein": 36,
+    "carbs": 22,
+    "fat": 18,
+    "link": "https://www.eatingwell.com/recipe/caesar-salad-(chicken)",
+    "tags": [
+      "global_non_veg",
+      "salad",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m57",
+    "name": "Greek Yogurt + Berries",
+    "calories": 260,
+    "protein": 18,
+    "carbs": 30,
+    "fat": 6,
+    "link": "https://www.tarladalal.com/greek-yogurt-+-berries",
+    "tags": [
+      "balanced",
+      "snack"
+    ]
+  },
+  {
+    "id": "m58",
+    "name": "Protein Shake (Banana + Whey)",
+    "calories": 320,
+    "protein": 28,
+    "carbs": 32,
+    "fat": 6,
+    "link": "https://www.bbcgoodfood.com/recipes/protein-shake-(banana-+-whey)",
+    "tags": [
+      "balanced",
+      "shake"
+    ]
+  },
+  {
+    "id": "m59",
+    "name": "Lentil Soup + Brown Bread",
+    "calories": 400,
+    "protein": 22,
+    "carbs": 56,
+    "fat": 8,
+    "link": "https://www.eatingwell.com/recipe/lentil-soup-+-brown-bread",
+    "tags": [
+      "vegan",
+      "soup",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m60",
+    "name": "Paneer Bhurji + Roti",
+    "calories": 480,
+    "protein": 28,
+    "carbs": 38,
+    "fat": 18,
+    "link": "https://www.tarladalal.com/paneer-bhurji-+-roti",
+    "tags": [
+      "indian_veg",
+      "lunch",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m61",
+    "name": "Masala Dosa + Sambar",
+    "calories": 520,
+    "protein": 16,
+    "carbs": 80,
+    "fat": 12,
+    "link": "https://www.bbcgoodfood.com/recipes/masala-dosa-+-sambar",
+    "tags": [
+      "indian_veg",
+      "breakfast",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m62",
+    "name": "Grilled Salmon + Quinoa",
+    "calories": 560,
+    "protein": 42,
+    "carbs": 38,
+    "fat": 20,
+    "link": "https://www.eatingwell.com/recipe/grilled-salmon-+-quinoa",
+    "tags": [
+      "global_non_veg",
+      "dinner",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m63",
+    "name": "Vegan Buddha Bowl",
+    "calories": 500,
+    "protein": 22,
+    "carbs": 68,
+    "fat": 14,
+    "link": "https://www.tarladalal.com/vegan-buddha-bowl",
+    "tags": [
+      "vegan",
+      "lunch",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m64",
+    "name": "Caesar Salad (Chicken)",
+    "calories": 420,
+    "protein": 36,
+    "carbs": 22,
+    "fat": 18,
+    "link": "https://www.bbcgoodfood.com/recipes/caesar-salad-(chicken)",
+    "tags": [
+      "global_non_veg",
+      "salad",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m65",
+    "name": "Greek Yogurt + Berries",
+    "calories": 260,
+    "protein": 18,
+    "carbs": 30,
+    "fat": 6,
+    "link": "https://www.eatingwell.com/recipe/greek-yogurt-+-berries",
+    "tags": [
+      "balanced",
+      "snack"
+    ]
+  },
+  {
+    "id": "m66",
+    "name": "Protein Shake (Banana + Whey)",
+    "calories": 320,
+    "protein": 28,
+    "carbs": 32,
+    "fat": 6,
+    "link": "https://www.tarladalal.com/protein-shake-(banana-+-whey)",
+    "tags": [
+      "balanced",
+      "shake"
+    ]
+  },
+  {
+    "id": "m67",
+    "name": "Lentil Soup + Brown Bread",
+    "calories": 400,
+    "protein": 22,
+    "carbs": 56,
+    "fat": 8,
+    "link": "https://www.bbcgoodfood.com/recipes/lentil-soup-+-brown-bread",
+    "tags": [
+      "vegan",
+      "soup",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m68",
+    "name": "Paneer Bhurji + Roti",
+    "calories": 480,
+    "protein": 28,
+    "carbs": 38,
+    "fat": 18,
+    "link": "https://www.eatingwell.com/recipe/paneer-bhurji-+-roti",
+    "tags": [
+      "indian_veg",
+      "lunch",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m69",
+    "name": "Masala Dosa + Sambar",
+    "calories": 520,
+    "protein": 16,
+    "carbs": 80,
+    "fat": 12,
+    "link": "https://www.tarladalal.com/masala-dosa-+-sambar",
+    "tags": [
+      "indian_veg",
+      "breakfast",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m70",
+    "name": "Grilled Salmon + Quinoa",
+    "calories": 560,
+    "protein": 42,
+    "carbs": 38,
+    "fat": 20,
+    "link": "https://www.bbcgoodfood.com/recipes/grilled-salmon-+-quinoa",
+    "tags": [
+      "global_non_veg",
+      "dinner",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m71",
+    "name": "Vegan Buddha Bowl",
+    "calories": 500,
+    "protein": 22,
+    "carbs": 68,
+    "fat": 14,
+    "link": "https://www.eatingwell.com/recipe/vegan-buddha-bowl",
+    "tags": [
+      "vegan",
+      "lunch",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m72",
+    "name": "Caesar Salad (Chicken)",
+    "calories": 420,
+    "protein": 36,
+    "carbs": 22,
+    "fat": 18,
+    "link": "https://www.tarladalal.com/caesar-salad-(chicken)",
+    "tags": [
+      "global_non_veg",
+      "salad",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m73",
+    "name": "Greek Yogurt + Berries",
+    "calories": 260,
+    "protein": 18,
+    "carbs": 30,
+    "fat": 6,
+    "link": "https://www.bbcgoodfood.com/recipes/greek-yogurt-+-berries",
+    "tags": [
+      "balanced",
+      "snack"
+    ]
+  },
+  {
+    "id": "m74",
+    "name": "Protein Shake (Banana + Whey)",
+    "calories": 320,
+    "protein": 28,
+    "carbs": 32,
+    "fat": 6,
+    "link": "https://www.eatingwell.com/recipe/protein-shake-(banana-+-whey)",
+    "tags": [
+      "balanced",
+      "shake"
+    ]
+  },
+  {
+    "id": "m75",
+    "name": "Lentil Soup + Brown Bread",
+    "calories": 400,
+    "protein": 22,
+    "carbs": 56,
+    "fat": 8,
+    "link": "https://www.tarladalal.com/lentil-soup-+-brown-bread",
+    "tags": [
+      "vegan",
+      "soup",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m76",
+    "name": "Paneer Bhurji + Roti",
+    "calories": 480,
+    "protein": 28,
+    "carbs": 38,
+    "fat": 18,
+    "link": "https://www.bbcgoodfood.com/recipes/paneer-bhurji-+-roti",
+    "tags": [
+      "indian_veg",
+      "lunch",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m77",
+    "name": "Masala Dosa + Sambar",
+    "calories": 520,
+    "protein": 16,
+    "carbs": 80,
+    "fat": 12,
+    "link": "https://www.eatingwell.com/recipe/masala-dosa-+-sambar",
+    "tags": [
+      "indian_veg",
+      "breakfast",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m78",
+    "name": "Grilled Salmon + Quinoa",
+    "calories": 560,
+    "protein": 42,
+    "carbs": 38,
+    "fat": 20,
+    "link": "https://www.tarladalal.com/grilled-salmon-+-quinoa",
+    "tags": [
+      "global_non_veg",
+      "dinner",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m79",
+    "name": "Vegan Buddha Bowl",
+    "calories": 500,
+    "protein": 22,
+    "carbs": 68,
+    "fat": 14,
+    "link": "https://www.bbcgoodfood.com/recipes/vegan-buddha-bowl",
+    "tags": [
+      "vegan",
+      "lunch",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m80",
+    "name": "Caesar Salad (Chicken)",
+    "calories": 420,
+    "protein": 36,
+    "carbs": 22,
+    "fat": 18,
+    "link": "https://www.eatingwell.com/recipe/caesar-salad-(chicken)",
+    "tags": [
+      "global_non_veg",
+      "salad",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m81",
+    "name": "Greek Yogurt + Berries",
+    "calories": 260,
+    "protein": 18,
+    "carbs": 30,
+    "fat": 6,
+    "link": "https://www.tarladalal.com/greek-yogurt-+-berries",
+    "tags": [
+      "balanced",
+      "snack"
+    ]
+  },
+  {
+    "id": "m82",
+    "name": "Protein Shake (Banana + Whey)",
+    "calories": 320,
+    "protein": 28,
+    "carbs": 32,
+    "fat": 6,
+    "link": "https://www.bbcgoodfood.com/recipes/protein-shake-(banana-+-whey)",
+    "tags": [
+      "balanced",
+      "shake"
+    ]
+  },
+  {
+    "id": "m83",
+    "name": "Lentil Soup + Brown Bread",
+    "calories": 400,
+    "protein": 22,
+    "carbs": 56,
+    "fat": 8,
+    "link": "https://www.eatingwell.com/recipe/lentil-soup-+-brown-bread",
+    "tags": [
+      "vegan",
+      "soup",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m84",
+    "name": "Paneer Bhurji + Roti",
+    "calories": 480,
+    "protein": 28,
+    "carbs": 38,
+    "fat": 18,
+    "link": "https://www.tarladalal.com/paneer-bhurji-+-roti",
+    "tags": [
+      "indian_veg",
+      "lunch",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m85",
+    "name": "Masala Dosa + Sambar",
+    "calories": 520,
+    "protein": 16,
+    "carbs": 80,
+    "fat": 12,
+    "link": "https://www.bbcgoodfood.com/recipes/masala-dosa-+-sambar",
+    "tags": [
+      "indian_veg",
+      "breakfast",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m86",
+    "name": "Grilled Salmon + Quinoa",
+    "calories": 560,
+    "protein": 42,
+    "carbs": 38,
+    "fat": 20,
+    "link": "https://www.eatingwell.com/recipe/grilled-salmon-+-quinoa",
+    "tags": [
+      "global_non_veg",
+      "dinner",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m87",
+    "name": "Vegan Buddha Bowl",
+    "calories": 500,
+    "protein": 22,
+    "carbs": 68,
+    "fat": 14,
+    "link": "https://www.tarladalal.com/vegan-buddha-bowl",
+    "tags": [
+      "vegan",
+      "lunch",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m88",
+    "name": "Caesar Salad (Chicken)",
+    "calories": 420,
+    "protein": 36,
+    "carbs": 22,
+    "fat": 18,
+    "link": "https://www.bbcgoodfood.com/recipes/caesar-salad-(chicken)",
+    "tags": [
+      "global_non_veg",
+      "salad",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m89",
+    "name": "Greek Yogurt + Berries",
+    "calories": 260,
+    "protein": 18,
+    "carbs": 30,
+    "fat": 6,
+    "link": "https://www.eatingwell.com/recipe/greek-yogurt-+-berries",
+    "tags": [
+      "balanced",
+      "snack"
+    ]
+  },
+  {
+    "id": "m90",
+    "name": "Protein Shake (Banana + Whey)",
+    "calories": 320,
+    "protein": 28,
+    "carbs": 32,
+    "fat": 6,
+    "link": "https://www.tarladalal.com/protein-shake-(banana-+-whey)",
+    "tags": [
+      "balanced",
+      "shake"
+    ]
+  },
+  {
+    "id": "m91",
+    "name": "Lentil Soup + Brown Bread",
+    "calories": 400,
+    "protein": 22,
+    "carbs": 56,
+    "fat": 8,
+    "link": "https://www.bbcgoodfood.com/recipes/lentil-soup-+-brown-bread",
+    "tags": [
+      "vegan",
+      "soup",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m92",
+    "name": "Paneer Bhurji + Roti",
+    "calories": 480,
+    "protein": 28,
+    "carbs": 38,
+    "fat": 18,
+    "link": "https://www.eatingwell.com/recipe/paneer-bhurji-+-roti",
+    "tags": [
+      "indian_veg",
+      "lunch",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m93",
+    "name": "Masala Dosa + Sambar",
+    "calories": 520,
+    "protein": 16,
+    "carbs": 80,
+    "fat": 12,
+    "link": "https://www.tarladalal.com/masala-dosa-+-sambar",
+    "tags": [
+      "indian_veg",
+      "breakfast",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m94",
+    "name": "Grilled Salmon + Quinoa",
+    "calories": 560,
+    "protein": 42,
+    "carbs": 38,
+    "fat": 20,
+    "link": "https://www.bbcgoodfood.com/recipes/grilled-salmon-+-quinoa",
+    "tags": [
+      "global_non_veg",
+      "dinner",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m95",
+    "name": "Vegan Buddha Bowl",
+    "calories": 500,
+    "protein": 22,
+    "carbs": 68,
+    "fat": 14,
+    "link": "https://www.eatingwell.com/recipe/vegan-buddha-bowl",
+    "tags": [
+      "vegan",
+      "lunch",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m96",
+    "name": "Caesar Salad (Chicken)",
+    "calories": 420,
+    "protein": 36,
+    "carbs": 22,
+    "fat": 18,
+    "link": "https://www.tarladalal.com/caesar-salad-(chicken)",
+    "tags": [
+      "global_non_veg",
+      "salad",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m97",
+    "name": "Greek Yogurt + Berries",
+    "calories": 260,
+    "protein": 18,
+    "carbs": 30,
+    "fat": 6,
+    "link": "https://www.bbcgoodfood.com/recipes/greek-yogurt-+-berries",
+    "tags": [
+      "balanced",
+      "snack"
+    ]
+  },
+  {
+    "id": "m98",
+    "name": "Protein Shake (Banana + Whey)",
+    "calories": 320,
+    "protein": 28,
+    "carbs": 32,
+    "fat": 6,
+    "link": "https://www.eatingwell.com/recipe/protein-shake-(banana-+-whey)",
+    "tags": [
+      "balanced",
+      "shake"
+    ]
+  },
+  {
+    "id": "m99",
+    "name": "Lentil Soup + Brown Bread",
+    "calories": 400,
+    "protein": 22,
+    "carbs": 56,
+    "fat": 8,
+    "link": "https://www.tarladalal.com/lentil-soup-+-brown-bread",
+    "tags": [
+      "vegan",
+      "soup",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m100",
+    "name": "Paneer Bhurji + Roti",
+    "calories": 480,
+    "protein": 28,
+    "carbs": 38,
+    "fat": 18,
+    "link": "https://www.bbcgoodfood.com/recipes/paneer-bhurji-+-roti",
+    "tags": [
+      "indian_veg",
+      "lunch",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m101",
+    "name": "Masala Dosa + Sambar",
+    "calories": 520,
+    "protein": 16,
+    "carbs": 80,
+    "fat": 12,
+    "link": "https://www.eatingwell.com/recipe/masala-dosa-+-sambar",
+    "tags": [
+      "indian_veg",
+      "breakfast",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m102",
+    "name": "Grilled Salmon + Quinoa",
+    "calories": 560,
+    "protein": 42,
+    "carbs": 38,
+    "fat": 20,
+    "link": "https://www.tarladalal.com/grilled-salmon-+-quinoa",
+    "tags": [
+      "global_non_veg",
+      "dinner",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m103",
+    "name": "Vegan Buddha Bowl",
+    "calories": 500,
+    "protein": 22,
+    "carbs": 68,
+    "fat": 14,
+    "link": "https://www.bbcgoodfood.com/recipes/vegan-buddha-bowl",
+    "tags": [
+      "vegan",
+      "lunch",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m104",
+    "name": "Caesar Salad (Chicken)",
+    "calories": 420,
+    "protein": 36,
+    "carbs": 22,
+    "fat": 18,
+    "link": "https://www.eatingwell.com/recipe/caesar-salad-(chicken)",
+    "tags": [
+      "global_non_veg",
+      "salad",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m105",
+    "name": "Greek Yogurt + Berries",
+    "calories": 260,
+    "protein": 18,
+    "carbs": 30,
+    "fat": 6,
+    "link": "https://www.tarladalal.com/greek-yogurt-+-berries",
+    "tags": [
+      "balanced",
+      "snack"
+    ]
+  },
+  {
+    "id": "m106",
+    "name": "Protein Shake (Banana + Whey)",
+    "calories": 320,
+    "protein": 28,
+    "carbs": 32,
+    "fat": 6,
+    "link": "https://www.bbcgoodfood.com/recipes/protein-shake-(banana-+-whey)",
+    "tags": [
+      "balanced",
+      "shake"
+    ]
+  },
+  {
+    "id": "m107",
+    "name": "Lentil Soup + Brown Bread",
+    "calories": 400,
+    "protein": 22,
+    "carbs": 56,
+    "fat": 8,
+    "link": "https://www.eatingwell.com/recipe/lentil-soup-+-brown-bread",
+    "tags": [
+      "vegan",
+      "soup",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m108",
+    "name": "Paneer Bhurji + Roti",
+    "calories": 480,
+    "protein": 28,
+    "carbs": 38,
+    "fat": 18,
+    "link": "https://www.tarladalal.com/paneer-bhurji-+-roti",
+    "tags": [
+      "indian_veg",
+      "lunch",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m109",
+    "name": "Masala Dosa + Sambar",
+    "calories": 520,
+    "protein": 16,
+    "carbs": 80,
+    "fat": 12,
+    "link": "https://www.bbcgoodfood.com/recipes/masala-dosa-+-sambar",
+    "tags": [
+      "indian_veg",
+      "breakfast",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m110",
+    "name": "Grilled Salmon + Quinoa",
+    "calories": 560,
+    "protein": 42,
+    "carbs": 38,
+    "fat": 20,
+    "link": "https://www.eatingwell.com/recipe/grilled-salmon-+-quinoa",
+    "tags": [
+      "global_non_veg",
+      "dinner",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m111",
+    "name": "Vegan Buddha Bowl",
+    "calories": 500,
+    "protein": 22,
+    "carbs": 68,
+    "fat": 14,
+    "link": "https://www.tarladalal.com/vegan-buddha-bowl",
+    "tags": [
+      "vegan",
+      "lunch",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m112",
+    "name": "Caesar Salad (Chicken)",
+    "calories": 420,
+    "protein": 36,
+    "carbs": 22,
+    "fat": 18,
+    "link": "https://www.bbcgoodfood.com/recipes/caesar-salad-(chicken)",
+    "tags": [
+      "global_non_veg",
+      "salad",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m113",
+    "name": "Greek Yogurt + Berries",
+    "calories": 260,
+    "protein": 18,
+    "carbs": 30,
+    "fat": 6,
+    "link": "https://www.eatingwell.com/recipe/greek-yogurt-+-berries",
+    "tags": [
+      "balanced",
+      "snack"
+    ]
+  },
+  {
+    "id": "m114",
+    "name": "Protein Shake (Banana + Whey)",
+    "calories": 320,
+    "protein": 28,
+    "carbs": 32,
+    "fat": 6,
+    "link": "https://www.tarladalal.com/protein-shake-(banana-+-whey)",
+    "tags": [
+      "balanced",
+      "shake"
+    ]
+  },
+  {
+    "id": "m115",
+    "name": "Lentil Soup + Brown Bread",
+    "calories": 400,
+    "protein": 22,
+    "carbs": 56,
+    "fat": 8,
+    "link": "https://www.bbcgoodfood.com/recipes/lentil-soup-+-brown-bread",
+    "tags": [
+      "vegan",
+      "soup",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m116",
+    "name": "Paneer Bhurji + Roti",
+    "calories": 480,
+    "protein": 28,
+    "carbs": 38,
+    "fat": 18,
+    "link": "https://www.eatingwell.com/recipe/paneer-bhurji-+-roti",
+    "tags": [
+      "indian_veg",
+      "lunch",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m117",
+    "name": "Masala Dosa + Sambar",
+    "calories": 520,
+    "protein": 16,
+    "carbs": 80,
+    "fat": 12,
+    "link": "https://www.tarladalal.com/masala-dosa-+-sambar",
+    "tags": [
+      "indian_veg",
+      "breakfast",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m118",
+    "name": "Grilled Salmon + Quinoa",
+    "calories": 560,
+    "protein": 42,
+    "carbs": 38,
+    "fat": 20,
+    "link": "https://www.bbcgoodfood.com/recipes/grilled-salmon-+-quinoa",
+    "tags": [
+      "global_non_veg",
+      "dinner",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m119",
+    "name": "Vegan Buddha Bowl",
+    "calories": 500,
+    "protein": 22,
+    "carbs": 68,
+    "fat": 14,
+    "link": "https://www.eatingwell.com/recipe/vegan-buddha-bowl",
+    "tags": [
+      "vegan",
+      "lunch",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m120",
+    "name": "Caesar Salad (Chicken)",
+    "calories": 420,
+    "protein": 36,
+    "carbs": 22,
+    "fat": 18,
+    "link": "https://www.tarladalal.com/caesar-salad-(chicken)",
+    "tags": [
+      "global_non_veg",
+      "salad",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m121",
+    "name": "Greek Yogurt + Berries",
+    "calories": 260,
+    "protein": 18,
+    "carbs": 30,
+    "fat": 6,
+    "link": "https://www.bbcgoodfood.com/recipes/greek-yogurt-+-berries",
+    "tags": [
+      "balanced",
+      "snack"
+    ]
+  },
+  {
+    "id": "m122",
+    "name": "Protein Shake (Banana + Whey)",
+    "calories": 320,
+    "protein": 28,
+    "carbs": 32,
+    "fat": 6,
+    "link": "https://www.eatingwell.com/recipe/protein-shake-(banana-+-whey)",
+    "tags": [
+      "balanced",
+      "shake"
+    ]
+  },
+  {
+    "id": "m123",
+    "name": "Lentil Soup + Brown Bread",
+    "calories": 400,
+    "protein": 22,
+    "carbs": 56,
+    "fat": 8,
+    "link": "https://www.tarladalal.com/lentil-soup-+-brown-bread",
+    "tags": [
+      "vegan",
+      "soup",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m124",
+    "name": "Paneer Bhurji + Roti",
+    "calories": 480,
+    "protein": 28,
+    "carbs": 38,
+    "fat": 18,
+    "link": "https://www.bbcgoodfood.com/recipes/paneer-bhurji-+-roti",
+    "tags": [
+      "indian_veg",
+      "lunch",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m125",
+    "name": "Masala Dosa + Sambar",
+    "calories": 520,
+    "protein": 16,
+    "carbs": 80,
+    "fat": 12,
+    "link": "https://www.eatingwell.com/recipe/masala-dosa-+-sambar",
+    "tags": [
+      "indian_veg",
+      "breakfast",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m126",
+    "name": "Grilled Salmon + Quinoa",
+    "calories": 560,
+    "protein": 42,
+    "carbs": 38,
+    "fat": 20,
+    "link": "https://www.tarladalal.com/grilled-salmon-+-quinoa",
+    "tags": [
+      "global_non_veg",
+      "dinner",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m127",
+    "name": "Vegan Buddha Bowl",
+    "calories": 500,
+    "protein": 22,
+    "carbs": 68,
+    "fat": 14,
+    "link": "https://www.bbcgoodfood.com/recipes/vegan-buddha-bowl",
+    "tags": [
+      "vegan",
+      "lunch",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m128",
+    "name": "Caesar Salad (Chicken)",
+    "calories": 420,
+    "protein": 36,
+    "carbs": 22,
+    "fat": 18,
+    "link": "https://www.eatingwell.com/recipe/caesar-salad-(chicken)",
+    "tags": [
+      "global_non_veg",
+      "salad",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m129",
+    "name": "Greek Yogurt + Berries",
+    "calories": 260,
+    "protein": 18,
+    "carbs": 30,
+    "fat": 6,
+    "link": "https://www.tarladalal.com/greek-yogurt-+-berries",
+    "tags": [
+      "balanced",
+      "snack"
+    ]
+  },
+  {
+    "id": "m130",
+    "name": "Protein Shake (Banana + Whey)",
+    "calories": 320,
+    "protein": 28,
+    "carbs": 32,
+    "fat": 6,
+    "link": "https://www.bbcgoodfood.com/recipes/protein-shake-(banana-+-whey)",
+    "tags": [
+      "balanced",
+      "shake"
+    ]
+  },
+  {
+    "id": "m131",
+    "name": "Lentil Soup + Brown Bread",
+    "calories": 400,
+    "protein": 22,
+    "carbs": 56,
+    "fat": 8,
+    "link": "https://www.eatingwell.com/recipe/lentil-soup-+-brown-bread",
+    "tags": [
+      "vegan",
+      "soup",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m132",
+    "name": "Paneer Bhurji + Roti",
+    "calories": 480,
+    "protein": 28,
+    "carbs": 38,
+    "fat": 18,
+    "link": "https://www.tarladalal.com/paneer-bhurji-+-roti",
+    "tags": [
+      "indian_veg",
+      "lunch",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m133",
+    "name": "Masala Dosa + Sambar",
+    "calories": 520,
+    "protein": 16,
+    "carbs": 80,
+    "fat": 12,
+    "link": "https://www.bbcgoodfood.com/recipes/masala-dosa-+-sambar",
+    "tags": [
+      "indian_veg",
+      "breakfast",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m134",
+    "name": "Grilled Salmon + Quinoa",
+    "calories": 560,
+    "protein": 42,
+    "carbs": 38,
+    "fat": 20,
+    "link": "https://www.eatingwell.com/recipe/grilled-salmon-+-quinoa",
+    "tags": [
+      "global_non_veg",
+      "dinner",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m135",
+    "name": "Vegan Buddha Bowl",
+    "calories": 500,
+    "protein": 22,
+    "carbs": 68,
+    "fat": 14,
+    "link": "https://www.tarladalal.com/vegan-buddha-bowl",
+    "tags": [
+      "vegan",
+      "lunch",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m136",
+    "name": "Caesar Salad (Chicken)",
+    "calories": 420,
+    "protein": 36,
+    "carbs": 22,
+    "fat": 18,
+    "link": "https://www.bbcgoodfood.com/recipes/caesar-salad-(chicken)",
+    "tags": [
+      "global_non_veg",
+      "salad",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m137",
+    "name": "Greek Yogurt + Berries",
+    "calories": 260,
+    "protein": 18,
+    "carbs": 30,
+    "fat": 6,
+    "link": "https://www.eatingwell.com/recipe/greek-yogurt-+-berries",
+    "tags": [
+      "balanced",
+      "snack"
+    ]
+  },
+  {
+    "id": "m138",
+    "name": "Protein Shake (Banana + Whey)",
+    "calories": 320,
+    "protein": 28,
+    "carbs": 32,
+    "fat": 6,
+    "link": "https://www.tarladalal.com/protein-shake-(banana-+-whey)",
+    "tags": [
+      "balanced",
+      "shake"
+    ]
+  },
+  {
+    "id": "m139",
+    "name": "Lentil Soup + Brown Bread",
+    "calories": 400,
+    "protein": 22,
+    "carbs": 56,
+    "fat": 8,
+    "link": "https://www.bbcgoodfood.com/recipes/lentil-soup-+-brown-bread",
+    "tags": [
+      "vegan",
+      "soup",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m140",
+    "name": "Paneer Bhurji + Roti",
+    "calories": 480,
+    "protein": 28,
+    "carbs": 38,
+    "fat": 18,
+    "link": "https://www.eatingwell.com/recipe/paneer-bhurji-+-roti",
+    "tags": [
+      "indian_veg",
+      "lunch",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m141",
+    "name": "Masala Dosa + Sambar",
+    "calories": 520,
+    "protein": 16,
+    "carbs": 80,
+    "fat": 12,
+    "link": "https://www.tarladalal.com/masala-dosa-+-sambar",
+    "tags": [
+      "indian_veg",
+      "breakfast",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m142",
+    "name": "Grilled Salmon + Quinoa",
+    "calories": 560,
+    "protein": 42,
+    "carbs": 38,
+    "fat": 20,
+    "link": "https://www.bbcgoodfood.com/recipes/grilled-salmon-+-quinoa",
+    "tags": [
+      "global_non_veg",
+      "dinner",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m143",
+    "name": "Vegan Buddha Bowl",
+    "calories": 500,
+    "protein": 22,
+    "carbs": 68,
+    "fat": 14,
+    "link": "https://www.eatingwell.com/recipe/vegan-buddha-bowl",
+    "tags": [
+      "vegan",
+      "lunch",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m144",
+    "name": "Caesar Salad (Chicken)",
+    "calories": 420,
+    "protein": 36,
+    "carbs": 22,
+    "fat": 18,
+    "link": "https://www.tarladalal.com/caesar-salad-(chicken)",
+    "tags": [
+      "global_non_veg",
+      "salad",
+      "balanced"
+    ]
+  },
+  {
+    "id": "m145",
+    "name": "Greek Yogurt + Berries",
+    "calories": 260,
+    "protein": 18,
+    "carbs": 30,
+    "fat": 6,
+    "link": "https://www.bbcgoodfood.com/recipes/greek-yogurt-+-berries",
+    "tags": [
+      "balanced",
+      "snack"
+    ]
+  }
+]
