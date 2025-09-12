@@ -204,5 +204,95 @@
         "duration": "10-12 min"
       }
     ]
+  },
+  {
+    "id": "w7",
+    "goal": "fat_loss",
+    "level": "beginner",
+    "type": "circuit",
+    "title": "Bodyweight Circuit A",
+    "link": "https://exrx.net/",
+    "blocks": [
+      { "name": "Jumping Jacks", "duration": "3x60s", "rest": "30s" },
+      { "name": "Air Squats", "sets": "3x20", "rest": "30s" },
+      { "name": "Mountain Climbers", "duration": "3x45s", "rest": "30s" },
+      { "name": "Push-ups", "sets": "3xAMRAP", "rest": "45s" },
+      { "name": "Burpees", "sets": "3x10", "rest": "45s" }
+    ]
+  },
+  {
+    "id": "w8",
+    "goal": "muscle_gain",
+    "level": "beginner",
+    "type": "hypertrophy",
+    "title": "Upper B (Hypertrophy)",
+    "link": "https://exrx.net/",
+    "blocks": [
+      { "name": "Incline Bench Press", "sets": "4x8-10", "rest": "120s" },
+      { "name": "Seated Row", "sets": "4x10-12", "rest": "90s" },
+      { "name": "Arnold Press", "sets": "3x12", "rest": "90s" },
+      { "name": "Cable Fly", "sets": "3x12-15", "rest": "75s" },
+      { "name": "Barbell Curl", "sets": "3x12", "rest": "60s" },
+      { "name": "Face Pull", "sets": "3x15", "rest": "60s" }
+    ]
+  },
+  {
+    "id": "w9",
+    "goal": "muscle_gain",
+    "level": "beginner",
+    "type": "strength",
+    "title": "Lower B (Strength)",
+    "link": "https://exrx.net/",
+    "blocks": [
+      { "name": "Front Squat", "sets": "4x6", "rest": "150s" },
+      { "name": "Good Morning", "sets": "4x8-10", "rest": "120s" },
+      { "name": "Step-Ups", "sets": "3x12/side", "rest": "90s" },
+      { "name": "Glute Bridge", "sets": "3x12-15", "rest": "75s" },
+      { "name": "Seated Calf Raise", "sets": "4x15", "rest": "60s" }
+    ]
+  },
+  {
+    "id": "w10",
+    "goal": "endurance",
+    "level": "beginner",
+    "type": "cardio",
+    "title": "Cycling Intervals",
+    "link": "https://exrx.net/",
+    "blocks": [
+      { "name": "Warm-up Spin", "duration": "10 min" },
+      { "name": "Intervals", "duration": "12x1 min hard / 2 min easy" },
+      { "name": "Cool Down", "duration": "10 min easy" },
+      { "name": "Core Stability", "duration": "3x1 min planks" }
+    ]
+  },
+  {
+    "id": "w11",
+    "goal": "general_fitness",
+    "level": "beginner",
+    "type": "functional",
+    "title": "Full Body Functional",
+    "link": "https://exrx.net/",
+    "blocks": [
+      { "name": "Kettlebell Swing", "sets": "4x15", "rest": "60s" },
+      { "name": "Pull-ups or Rows", "sets": "4x10-12", "rest": "90s" },
+      { "name": "Push Press", "sets": "3x10", "rest": "90s" },
+      { "name": "Farmer's Carry", "duration": "3x40m", "rest": "60s" },
+      { "name": "Side Plank", "duration": "3x30s/side", "rest": "30s" }
+    ]
+  },
+  {
+    "id": "w12",
+    "goal": "general_fitness",
+    "level": "beginner",
+    "type": "mobility",
+    "title": "Mobility & Recovery",
+    "link": "https://exrx.net/",
+    "blocks": [
+      { "name": "Cat-Cow Stretch", "duration": "3x45s" },
+      { "name": "Hip Flexor Stretch", "duration": "3x45s/side" },
+      { "name": "Thoracic Rotation", "duration": "3x10/side" },
+      { "name": "Hamstring Stretch", "duration": "3x45s" },
+      { "name": "Child's Pose", "duration": "3x60s" }
+    ]
   }
 ]
