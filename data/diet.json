@@ -1,1706 +1,506 @@
-[
+import json
+
+meals = [
   {
     "id": "m1",
+    "name": "Paneer Bhurji with Roti",
+    "calories": 520,
+    "protein": 30,
+    "carbs": 45,
+    "fat": 22,
+    "link": "https://www.tarladalal.com/Paneer-Bhurji-2828r",
+    "tags": ["indian_veg", "balanced", "lunch", "dinner"]
+  },
+  {
+    "id": "m2",
+    "name": "Dal Tadka + Brown Rice",
+    "calories": 560,
+    "protein": 24,
+    "carbs": 85,
+    "fat": 10,
+    "link": "https://www.tarladalal.com/dal-tadka-39276r",
+    "tags": ["indian_veg", "vegan", "balanced", "lunch", "dinner"]
+  },
+  {
+    "id": "m3",
+    "name": "Vegetable Poha + Peanuts",
+    "calories": 420,
+    "protein": 12,
+    "carbs": 65,
+    "fat": 12,
+    "link": "https://www.tarladalal.com/kanda-poha-39812r",
+    "tags": ["indian_veg", "breakfast"]
+  },
+  {
+    "id": "m4",
+    "name": "Masala Oats + Egg Whites",
+    "calories": 430,
+    "protein": 28,
+    "carbs": 50,
+    "fat": 12,
+    "link": "https://www.bbcgoodfood.com/recipes/spiced-porridge",
+    "tags": ["balanced", "global_non_veg", "breakfast"]
+  },
+  {
+    "id": "m5",
+    "name": "Grilled Chicken + Quinoa",
+    "calories": 600,
+    "protein": 45,
+    "carbs": 55,
+    "fat": 18,
+    "link": "https://www.eatingwell.com/recipe/266652/grilled-chicken-quinoa-bowl",
+    "tags": ["indian_non_veg", "global_non_veg", "balanced", "lunch", "dinner"]
+  },
+  {
+    "id": "m6",
+    "name": "Tandoori Fish + Salad",
+    "calories": 520,
+    "protein": 42,
+    "carbs": 20,
+    "fat": 26,
+    "link": "https://www.bbcgoodfood.com/recipes/tandoori-fish",
+    "tags": ["indian_non_veg", "global_non_veg", "dinner"]
+  },
+  {
+    "id": "m7",
+    "name": "Chole (Chickpeas) + Roti",
+    "calories": 580,
+    "protein": 22,
+    "carbs": 90,
+    "fat": 10,
+    "link": "https://www.tarladalal.com/Chole-Recipe-610r",
+    "tags": ["indian_veg", "vegan", "lunch", "dinner"]
+  },
+  {
+    "id": "m8",
+    "name": "Tofu Stir-fry + Brown Rice",
+    "calories": 540,
+    "protein": 32,
+    "carbs": 70,
+    "fat": 14,
+    "link": "https://www.eatingwell.com/recipe/266678/tofu-vegetable-stir-fry",
+    "tags": ["vegan", "balanced", "lunch", "dinner"]
+  },
+  {
+    "id": "m9",
+    "name": "Greek Yogurt Parfait",
+    "calories": 350,
+    "protein": 24,
+    "carbs": 45,
+    "fat": 8,
+    "link": "https://www.eatingwell.com/recipe/252209/yogurt-parfait",
+    "tags": ["balanced", "breakfast", "snack"]
+  },
+  {
+    "id": "m10",
+    "name": "Protein Smoothie (Whey)",
+    "calories": 320,
+    "protein": 28,
+    "carbs": 35,
+    "fat": 6,
+    "link": "https://www.healthline.com/nutrition/protein-shake-recipes",
+    "tags": ["balanced", "global_non_veg", "shake", "snack"]
+  },
+  {
+    "id": "m11",
+    "name": "Protein Smoothie (Plant)",
+    "calories": 320,
+    "protein": 28,
+    "carbs": 35,
+    "fat": 6,
+    "link": "https://www.healthline.com/nutrition/protein-shake-recipes",
+    "tags": ["vegan", "shake", "snack"]
+  },
+  {
+    "id": "m12",
+    "name": "Sprouts & Cucumber Salad",
+    "calories": 260,
+    "protein": 16,
+    "carbs": 28,
+    "fat": 8,
+    "link": "https://www.tarladalal.com/moong-sprouts-salad-36452r",
+    "tags": ["indian_veg", "vegan", "salad", "snack"]
+  },
+  {
+    "id": "m13",
+    "name": "Keto Paneer Bowl",
+    "calories": 520,
+    "protein": 32,
+    "carbs": 16,
+    "fat": 34,
+    "link": "https://www.dietdoctor.com/recipes/keto-paneer",
+    "tags": ["indian_veg", "dinner"]
+  },
+  {
+    "id": "m14",
+    "name": "Egg Masala + Roti",
+    "calories": 520,
+    "protein": 32,
+    "carbs": 48,
+    "fat": 18,
+    "link": "https://www.indianhealthyrecipes.com/egg-curry-recipe/",
+    "tags": ["indian_non_veg", "global_non_veg", "lunch", "dinner"]
+  },
+  {
+    "id": "m15",
+    "name": "Avocado Chickpea Salad",
+    "calories": 420,
+    "protein": 14,
+    "carbs": 40,
+    "fat": 20,
+    "link": "https://www.bbcgoodfood.com/recipes/chickpea-avocado-salad",
+    "tags": ["vegan", "salad", "snack", "balanced"]
+  },
+  {
+    "id": "m16",
+    "name": "Grilled Salmon + Sweet Potato",
+    "calories": 640,
+    "protein": 42,
+    "carbs": 45,
+    "fat": 26,
+    "link": "https://www.eatingwell.com/recipe/252222/grilled-salmon",
+    "tags": ["global_non_veg", "dinner", "balanced"]
+  },
+  {
+    "id": "m17",
+    "name": "Idli Sambar",
+    "calories": 420,
+    "protein": 16,
+    "carbs": 70,
+    "fat": 6,
+    "link": "https://www.tarladalal.com/idli-40263r",
+    "tags": ["indian_veg", "vegan", "breakfast", "lunch"]
+  },
+  {
+    "id": "m18",
+    "name": "Upma + Curd",
+    "calories": 460,
+    "protein": 14,
+    "carbs": 65,
+    "fat": 14,
+    "link": "https://www.tarladalal.com/sooji-upma-40045r",
+    "tags": ["indian_veg", "breakfast"]
+  },
+  {
+    "id": "m19",
+    "name": "Chicken Caesar Salad (light)",
+    "calories": 430,
+    "protein": 38,
+    "carbs": 20,
+    "fat": 18,
+    "link": "https://www.eatingwell.com/recipe/252209/chicken-caesar-salad",
+    "tags": ["global_non_veg", "salad", "lunch", "dinner"]
+  },
+  {
+    "id": "m20",
+    "name": "Mixed Nuts (40g)",
+    "calories": 250,
+    "protein": 8,
+    "carbs": 10,
+    "fat": 20,
+    "link": "https://www.healthline.com/nutrition/healthy-nuts",
+    "tags": ["snack", "vegan", "balanced"]
+  },
+  {
+    "id": "m21",
+    "name": "Kachumber Salad",
+    "calories": 180,
+    "protein": 6,
+    "carbs": 24,
+    "fat": 6,
+    "link": "https://www.tarladalal.com/kachumber-salad-38801r",
+    "tags": ["indian_veg", "vegan", "salad", "snack"]
+  },
+  {
+    "id": "m22",
+    "name": "Spinach Lentil Soup",
+    "calories": 320,
+    "protein": 22,
+    "carbs": 38,
+    "fat": 6,
+    "link": "https://www.bbcgoodfood.com/recipes/spinach-lentil-soup",
+    "tags": ["vegan", "soup", "balanced"]
+  },
+  {
+    "id": "m23",
+    "name": "Berry Oats Shake",
+    "calories": 380,
+    "protein": 26,
+    "carbs": 52,
+    "fat": 8,
+    "link": "https://www.eatingwell.com/recipe/268566/berry-oat-smoothie",
+    "tags": ["shake", "breakfast", "balanced"]
+  },
+  {
+    "id": "m24",
+    "name": "Chicken & Rice Bowl",
+    "calories": 620,
+    "protein": 45,
+    "carbs": 70,
+    "fat": 16,
+    "link": "https://www.eatingwell.com/recipe/270144/chicken-rice-bowl",
+    "tags": ["global_non_veg", "indian_non_veg", "lunch", "dinner"]
+  },
+  {
+    "id": "m25",
+    "name": "Tofu Buddha Bowl",
+    "calories": 560,
+    "protein": 32,
+    "carbs": 60,
+    "fat": 18,
+    "link": "https://www.bbcgoodfood.com/recipes/buddha-bowl",
+    "tags": ["vegan", "lunch", "dinner"]
+  },
+
+  # --- Additional meals to reach 50 ---
+  {
+    "id": "m26",
     "name": "Rajma + Brown Rice",
     "calories": 590,
     "protein": 24,
     "carbs": 92,
     "fat": 12,
     "link": "https://www.tarladalal.com/Rajma-Chawal-Recipe-39933r",
-    "tags": [
-      "indian_veg",
-      "vegan",
-      "lunch",
-      "dinner"
-    ]
+    "tags": ["indian_veg", "vegan", "lunch", "dinner"]
   },
   {
-    "id": "m2",
+    "id": "m27",
     "name": "Moong Dal Cheela + Green Chutney",
     "calories": 380,
     "protein": 20,
     "carbs": 42,
     "fat": 10,
     "link": "https://www.tarladalal.com/Moong-Dal-Cheela-Recipe-39364r",
-    "tags": [
-      "indian_veg",
-      "vegan",
-      "breakfast",
-      "snack"
-    ]
+    "tags": ["indian_veg", "vegan", "breakfast", "snack"]
   },
   {
-    "id": "m3",
+    "id": "m28",
     "name": "Vegetable Pulao + Raita",
     "calories": 540,
     "protein": 18,
     "carbs": 82,
     "fat": 14,
     "link": "https://www.tarladalal.com/Vegetable-Pulao-Recipe-38901r",
-    "tags": [
-      "indian_veg",
-      "balanced",
-      "lunch",
-      "dinner"
-    ]
+    "tags": ["indian_veg", "balanced", "lunch", "dinner"]
   },
   {
-    "id": "m4",
-    "name": "Vegetable Khichdi",
-    "calories": 460,
-    "protein": 18,
-    "carbs": 72,
-    "fat": 10,
-    "link": "https://www.tarladalal.com/Vegetable-Khichdi-38890r",
-    "tags": [
-      "indian_veg",
-      "vegan",
-      "balanced",
-      "lunch",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m5",
-    "name": "Paneer Bhurji + Roti",
-    "calories": 480,
-    "protein": 28,
-    "carbs": 38,
-    "fat": 18,
-    "link": "https://www.tarladalal.com/Paneer-Bhurji-Recipe-28105r",
-    "tags": [
-      "indian_veg",
-      "lunch",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m6",
-    "name": "Masala Dosa + Sambar",
-    "calories": 520,
-    "protein": 16,
-    "carbs": 80,
-    "fat": 12,
-    "link": "https://www.tarladalal.com/Masala-Dosa-Recipe-10941r",
-    "tags": [
-      "indian_veg",
-      "breakfast",
-      "balanced"
-    ]
-  },
-  {
-    "id": "m7",
-    "name": "Chicken Tikka + Salad",
-    "calories": 540,
-    "protein": 46,
-    "carbs": 18,
-    "fat": 28,
-    "link": "https://www.bbcgoodfood.com/recipes/chicken-tikka",
-    "tags": [
-      "indian_non_veg",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m8",
-    "name": "Butter Chicken + Naan",
-    "calories": 720,
-    "protein": 48,
-    "carbs": 54,
-    "fat": 34,
-    "link": "https://www.bbcgoodfood.com/recipes/butter-chicken",
-    "tags": [
-      "indian_non_veg",
-      "lunch",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m9",
-    "name": "Egg Curry + Rice",
-    "calories": 580,
-    "protein": 28,
-    "carbs": 66,
-    "fat": 18,
-    "link": "https://www.tarladalal.com/Egg-Curry-Recipe-40314r",
-    "tags": [
-      "indian_non_veg",
-      "lunch",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m10",
-    "name": "Egg White Omelette + Toast",
-    "calories": 380,
-    "protein": 28,
-    "carbs": 28,
-    "fat": 12,
-    "link": "https://www.eatingwell.com/recipe/270523/egg-white-omelet",
-    "tags": [
-      "global_non_veg",
-      "breakfast",
-      "balanced"
-    ]
-  },
-  {
-    "id": "m11",
-    "name": "Grilled Salmon + Quinoa",
-    "calories": 560,
-    "protein": 42,
-    "carbs": 38,
-    "fat": 20,
-    "link": "https://www.eatingwell.com/recipe/279987/grilled-salmon",
-    "tags": [
-      "global_non_veg",
-      "dinner",
-      "balanced"
-    ]
-  },
-  {
-    "id": "m12",
-    "name": "Chicken Caesar Salad",
-    "calories": 420,
-    "protein": 36,
-    "carbs": 22,
-    "fat": 18,
-    "link": "https://www.bbcgoodfood.com/recipes/chicken-caesar-salad",
-    "tags": [
-      "global_non_veg",
-      "salad",
-      "lunch"
-    ]
-  },
-  {
-    "id": "m13",
-    "name": "Hummus + Whole Wheat Pita",
-    "calories": 420,
-    "protein": 14,
-    "carbs": 50,
-    "fat": 16,
-    "link": "https://www.bbcgoodfood.com/recipes/hummus",
-    "tags": [
-      "vegan",
-      "snack",
-      "balanced"
-    ]
-  },
-  {
-    "id": "m14",
-    "name": "Grilled Eggplant + Couscous",
-    "calories": 480,
-    "protein": 18,
-    "carbs": 62,
-    "fat": 16,
-    "link": "https://www.eatingwell.com/recipe/249987/grilled-eggplant",
-    "tags": [
-      "vegan",
-      "balanced",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m15",
+    "id": "m29",
     "name": "Minestrone Soup + Whole Wheat Bread",
     "calories": 360,
     "protein": 14,
     "carbs": 50,
     "fat": 10,
     "link": "https://www.bbcgoodfood.com/recipes/minestrone-soup",
-    "tags": [
-      "vegan",
-      "soup",
-      "balanced",
-      "dinner"
-    ]
+    "tags": ["vegan", "soup", "balanced", "dinner"]
   },
   {
-    "id": "m16",
-    "name": "Vegan Buddha Bowl",
-    "calories": 500,
-    "protein": 22,
-    "carbs": 68,
-    "fat": 14,
-    "link": "https://www.eatingwell.com/recipe/278928/vegan-buddha-bowl",
-    "tags": [
-      "vegan",
-      "lunch",
-      "balanced"
-    ]
-  },
-  {
-    "id": "m17",
+    "id": "m30",
     "name": "Oats + Peanut Butter Bowl",
     "calories": 420,
     "protein": 20,
     "carbs": 55,
     "fat": 14,
     "link": "https://www.eatingwell.com/recipe/267236/oatmeal-with-peanut-butter",
-    "tags": [
-      "balanced",
-      "breakfast"
-    ]
-  },
-  {
-    "id": "m18",
-    "name": "Greek Yogurt + Berries",
-    "calories": 260,
-    "protein": 18,
-    "carbs": 30,
-    "fat": 6,
-    "link": "https://www.eatingwell.com/recipe/272233/greek-yogurt-berries",
-    "tags": [
-      "balanced",
-      "snack"
-    ]
-  },
-  {
-    "id": "m19",
-    "name": "Protein Shake (Banana + Whey)",
-    "calories": 320,
-    "protein": 28,
-    "carbs": 32,
-    "fat": 6,
-    "link": "https://www.eatingwell.com/recipe/272221/banana-protein-shake",
-    "tags": [
-      "balanced",
-      "shake",
-      "snack"
-    ]
-  },
-  {
-    "id": "m20",
-    "name": "Lentil Soup + Brown Bread",
-    "calories": 400,
-    "protein": 22,
-    "carbs": 56,
-    "fat": 8,
-    "link": "https://www.bbcgoodfood.com/recipes/lentil-soup",
-    "tags": [
-      "vegan",
-      "soup",
-      "balanced",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m21",
-    "name": "Rajma + Brown Rice Variant 2",
-    "calories": 590,
-    "protein": 24,
-    "carbs": 92,
-    "fat": 12,
-    "link": "https://www.tarladalal.com/Rajma-Chawal-Recipe-39933r",
-    "tags": [
-      "indian_veg",
-      "vegan",
-      "lunch",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m22",
-    "name": "Moong Dal Cheela + Green Chutney Variant 2",
-    "calories": 380,
-    "protein": 20,
-    "carbs": 42,
-    "fat": 10,
-    "link": "https://www.tarladalal.com/Moong-Dal-Cheela-Recipe-39364r",
-    "tags": [
-      "indian_veg",
-      "vegan",
-      "breakfast",
-      "snack"
-    ]
-  },
-  {
-    "id": "m23",
-    "name": "Vegetable Pulao + Raita Variant 2",
-    "calories": 540,
-    "protein": 18,
-    "carbs": 82,
-    "fat": 14,
-    "link": "https://www.tarladalal.com/Vegetable-Pulao-Recipe-38901r",
-    "tags": [
-      "indian_veg",
-      "balanced",
-      "lunch",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m24",
-    "name": "Vegetable Khichdi Variant 2",
-    "calories": 460,
-    "protein": 18,
-    "carbs": 72,
-    "fat": 10,
-    "link": "https://www.tarladalal.com/Vegetable-Khichdi-38890r",
-    "tags": [
-      "indian_veg",
-      "vegan",
-      "balanced",
-      "lunch",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m25",
-    "name": "Paneer Bhurji + Roti Variant 2",
-    "calories": 480,
-    "protein": 28,
-    "carbs": 38,
-    "fat": 18,
-    "link": "https://www.tarladalal.com/Paneer-Bhurji-Recipe-28105r",
-    "tags": [
-      "indian_veg",
-      "lunch",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m26",
-    "name": "Masala Dosa + Sambar Variant 2",
-    "calories": 520,
-    "protein": 16,
-    "carbs": 80,
-    "fat": 12,
-    "link": "https://www.tarladalal.com/Masala-Dosa-Recipe-10941r",
-    "tags": [
-      "indian_veg",
-      "breakfast",
-      "balanced"
-    ]
-  },
-  {
-    "id": "m27",
-    "name": "Chicken Tikka + Salad Variant 2",
-    "calories": 540,
-    "protein": 46,
-    "carbs": 18,
-    "fat": 28,
-    "link": "https://www.bbcgoodfood.com/recipes/chicken-tikka",
-    "tags": [
-      "indian_non_veg",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m28",
-    "name": "Butter Chicken + Naan Variant 2",
-    "calories": 720,
-    "protein": 48,
-    "carbs": 54,
-    "fat": 34,
-    "link": "https://www.bbcgoodfood.com/recipes/butter-chicken",
-    "tags": [
-      "indian_non_veg",
-      "lunch",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m29",
-    "name": "Egg Curry + Rice Variant 2",
-    "calories": 580,
-    "protein": 28,
-    "carbs": 66,
-    "fat": 18,
-    "link": "https://www.tarladalal.com/Egg-Curry-Recipe-40314r",
-    "tags": [
-      "indian_non_veg",
-      "lunch",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m30",
-    "name": "Egg White Omelette + Toast Variant 2",
-    "calories": 380,
-    "protein": 28,
-    "carbs": 28,
-    "fat": 12,
-    "link": "https://www.eatingwell.com/recipe/270523/egg-white-omelet",
-    "tags": [
-      "global_non_veg",
-      "breakfast",
-      "balanced"
-    ]
+    "tags": ["vegan", "breakfast", "balanced"]
   },
   {
     "id": "m31",
-    "name": "Grilled Salmon + Quinoa Variant 2",
-    "calories": 560,
-    "protein": 42,
-    "carbs": 38,
-    "fat": 20,
-    "link": "https://www.eatingwell.com/recipe/279987/grilled-salmon",
-    "tags": [
-      "global_non_veg",
-      "dinner",
-      "balanced"
-    ]
+    "name": "Vegetable Khichdi",
+    "calories": 460,
+    "protein": 18,
+    "carbs": 72,
+    "fat": 10,
+    "link": "https://www.tarladalal.com/Vegetable-Khichdi-38890r",
+    "tags": ["indian_veg", "vegan", "balanced", "lunch", "dinner"]
   },
   {
     "id": "m32",
-    "name": "Chicken Caesar Salad Variant 2",
-    "calories": 420,
-    "protein": 36,
-    "carbs": 22,
-    "fat": 18,
-    "link": "https://www.bbcgoodfood.com/recipes/chicken-caesar-salad",
-    "tags": [
-      "global_non_veg",
-      "salad",
-      "lunch"
-    ]
+    "name": "Shakshuka (Eggs in Tomato Sauce)",
+    "calories": 480,
+    "protein": 28,
+    "carbs": 30,
+    "fat": 24,
+    "link": "https://www.bbcgoodfood.com/recipes/shakshuka",
+    "tags": ["global_non_veg", "breakfast", "dinner"]
   },
   {
     "id": "m33",
-    "name": "Hummus + Whole Wheat Pita Variant 2",
-    "calories": 420,
-    "protein": 14,
-    "carbs": 50,
-    "fat": 16,
-    "link": "https://www.bbcgoodfood.com/recipes/hummus",
-    "tags": [
-      "vegan",
-      "snack",
-      "balanced"
-    ]
+    "name": "Paneer Tikka + Mint Chutney",
+    "calories": 500,
+    "protein": 32,
+    "carbs": 20,
+    "fat": 28,
+    "link": "https://www.tarladalal.com/paneer-tikka-21962r",
+    "tags": ["indian_veg", "balanced", "snack", "dinner"]
   },
   {
     "id": "m34",
-    "name": "Grilled Eggplant + Couscous Variant 2",
-    "calories": 480,
-    "protein": 18,
-    "carbs": 62,
-    "fat": 16,
-    "link": "https://www.eatingwell.com/recipe/249987/grilled-eggplant",
-    "tags": [
-      "vegan",
-      "balanced",
-      "dinner"
-    ]
+    "name": "Vegetable Sandwich (Whole Wheat)",
+    "calories": 340,
+    "protein": 14,
+    "carbs": 50,
+    "fat": 8,
+    "link": "https://www.tarladalal.com/vegetable-sandwich-40173r",
+    "tags": ["indian_veg", "snack", "breakfast"]
   },
   {
     "id": "m35",
-    "name": "Minestrone Soup + Whole Wheat Bread Variant 2",
-    "calories": 360,
-    "protein": 14,
-    "carbs": 50,
+    "name": "Chicken Soup",
+    "calories": 300,
+    "protein": 26,
+    "carbs": 12,
     "fat": 10,
-    "link": "https://www.bbcgoodfood.com/recipes/minestrone-soup",
-    "tags": [
-      "vegan",
-      "soup",
-      "balanced",
-      "dinner"
-    ]
+    "link": "https://www.bbcgoodfood.com/recipes/chicken-soup",
+    "tags": ["global_non_veg", "soup", "balanced", "dinner"]
   },
   {
     "id": "m36",
-    "name": "Vegan Buddha Bowl Variant 2",
-    "calories": 500,
+    "name": "Vegan Lentil Burger",
+    "calories": 460,
     "protein": 22,
-    "carbs": 68,
+    "carbs": 60,
     "fat": 14,
-    "link": "https://www.eatingwell.com/recipe/278928/vegan-buddha-bowl",
-    "tags": [
-      "vegan",
-      "lunch",
-      "balanced"
-    ]
+    "link": "https://www.bbcgoodfood.com/recipes/lentil-burger",
+    "tags": ["vegan", "snack", "balanced", "lunch"]
   },
   {
     "id": "m37",
-    "name": "Oats + Peanut Butter Bowl Variant 2",
-    "calories": 420,
-    "protein": 20,
-    "carbs": 55,
-    "fat": 14,
-    "link": "https://www.eatingwell.com/recipe/267236/oatmeal-with-peanut-butter",
-    "tags": [
-      "balanced",
-      "breakfast"
-    ]
+    "name": "Quinoa Salad with Veggies",
+    "calories": 400,
+    "protein": 18,
+    "carbs": 56,
+    "fat": 12,
+    "link": "https://www.eatingwell.com/recipe/276947/quinoa-salad",
+    "tags": ["vegan", "salad", "lunch"]
   },
   {
     "id": "m38",
-    "name": "Greek Yogurt + Berries Variant 2",
-    "calories": 260,
-    "protein": 18,
-    "carbs": 30,
-    "fat": 6,
-    "link": "https://www.eatingwell.com/recipe/272233/greek-yogurt-berries",
-    "tags": [
-      "balanced",
-      "snack"
-    ]
+    "name": "Egg White Omelette + Spinach",
+    "calories": 350,
+    "protein": 26,
+    "carbs": 20,
+    "fat": 12,
+    "link": "https://www.eatingwell.com/recipe/270523/egg-white-omelet",
+    "tags": ["global_non_veg", "breakfast", "balanced"]
   },
   {
     "id": "m39",
-    "name": "Protein Shake (Banana + Whey) Variant 2",
-    "calories": 320,
-    "protein": 28,
-    "carbs": 32,
-    "fat": 6,
-    "link": "https://www.eatingwell.com/recipe/272221/banana-protein-shake",
-    "tags": [
-      "balanced",
-      "shake",
-      "snack"
-    ]
+    "name": "Vegetable Wrap (Whole Wheat)",
+    "calories": 380,
+    "protein": 16,
+    "carbs": 52,
+    "fat": 12,
+    "link": "https://www.tarladalal.com/vegetable-wrap-36890r",
+    "tags": ["indian_veg", "balanced", "snack", "lunch"]
   },
   {
     "id": "m40",
-    "name": "Lentil Soup + Brown Bread Variant 2",
-    "calories": 400,
-    "protein": 22,
-    "carbs": 56,
-    "fat": 8,
-    "link": "https://www.bbcgoodfood.com/recipes/lentil-soup",
-    "tags": [
-      "vegan",
-      "soup",
-      "balanced",
-      "dinner"
-    ]
+    "name": "Palak Paneer + Roti",
+    "calories": 540,
+    "protein": 30,
+    "carbs": 48,
+    "fat": 22,
+    "link": "https://www.tarladalal.com/palak-paneer-1949r",
+    "tags": ["indian_veg", "lunch", "dinner"]
   },
   {
     "id": "m41",
-    "name": "Rajma + Brown Rice Variant 3",
-    "calories": 590,
-    "protein": 24,
-    "carbs": 92,
-    "fat": 12,
-    "link": "https://www.tarladalal.com/Rajma-Chawal-Recipe-39933r",
-    "tags": [
-      "indian_veg",
-      "vegan",
-      "lunch",
-      "dinner"
-    ]
+    "name": "Chicken Biryani",
+    "calories": 680,
+    "protein": 42,
+    "carbs": 90,
+    "fat": 22,
+    "link": "https://www.indianhealthyrecipes.com/chicken-biryani-recipe/",
+    "tags": ["indian_non_veg", "dinner", "lunch"]
   },
   {
     "id": "m42",
-    "name": "Moong Dal Cheela + Green Chutney Variant 3",
-    "calories": 380,
-    "protein": 20,
-    "carbs": 42,
-    "fat": 10,
-    "link": "https://www.tarladalal.com/Moong-Dal-Cheela-Recipe-39364r",
-    "tags": [
-      "indian_veg",
-      "vegan",
-      "breakfast",
-      "snack"
-    ]
+    "name": "Vegetable Soup",
+    "calories": 220,
+    "protein": 10,
+    "carbs": 28,
+    "fat": 6,
+    "link": "https://www.tarladalal.com/vegetable-soup-36885r",
+    "tags": ["vegan", "soup", "balanced", "snack"]
   },
   {
     "id": "m43",
-    "name": "Vegetable Pulao + Raita Variant 3",
-    "calories": 540,
-    "protein": 18,
-    "carbs": 82,
-    "fat": 14,
-    "link": "https://www.tarladalal.com/Vegetable-Pulao-Recipe-38901r",
-    "tags": [
-      "indian_veg",
-      "balanced",
-      "lunch",
-      "dinner"
-    ]
+    "name": "Grilled Paneer Salad",
+    "calories": 360,
+    "protein": 20,
+    "carbs": 28,
+    "fat": 16,
+    "link": "https://www.tarladalal.com/grilled-paneer-salad-41325r",
+    "tags": ["indian_veg", "salad", "snack", "balanced"]
   },
   {
     "id": "m44",
-    "name": "Vegetable Khichdi Variant 3",
-    "calories": 460,
-    "protein": 18,
-    "carbs": 72,
-    "fat": 10,
-    "link": "https://www.tarladalal.com/Vegetable-Khichdi-38890r",
-    "tags": [
-      "indian_veg",
-      "vegan",
-      "balanced",
-      "lunch",
-      "dinner"
-    ]
+    "name": "Stuffed Paratha (Paneer)",
+    "calories": 480,
+    "protein": 22,
+    "carbs": 60,
+    "fat": 16,
+    "link": "https://www.tarladalal.com/paneer-paratha-28557r",
+    "tags": ["indian_veg", "breakfast", "lunch"]
   },
   {
     "id": "m45",
-    "name": "Paneer Bhurji + Roti Variant 3",
-    "calories": 480,
-    "protein": 28,
-    "carbs": 38,
-    "fat": 18,
-    "link": "https://www.tarladalal.com/Paneer-Bhurji-Recipe-28105r",
-    "tags": [
-      "indian_veg",
-      "lunch",
-      "dinner"
-    ]
+    "name": "Mutton Curry + Roti",
+    "calories": 700,
+    "protein": 46,
+    "carbs": 40,
+    "fat": 34,
+    "link": "https://www.indianhealthyrecipes.com/mutton-curry-recipe/",
+    "tags": ["indian_non_veg", "dinner", "global_non_veg"]
   },
   {
     "id": "m46",
-    "name": "Masala Dosa + Sambar Variant 3",
-    "calories": 520,
-    "protein": 16,
-    "carbs": 80,
-    "fat": 12,
-    "link": "https://www.tarladalal.com/Masala-Dosa-Recipe-10941r",
-    "tags": [
-      "indian_veg",
-      "breakfast",
-      "balanced"
-    ]
+    "name": "Avocado Toast",
+    "calories": 360,
+    "protein": 10,
+    "carbs": 40,
+    "fat": 18,
+    "link": "https://www.bbcgoodfood.com/recipes/avocado-toast",
+    "tags": ["vegan", "breakfast", "snack"]
   },
   {
     "id": "m47",
-    "name": "Chicken Tikka + Salad Variant 3",
-    "calories": 540,
-    "protein": 46,
-    "carbs": 18,
-    "fat": 28,
-    "link": "https://www.bbcgoodfood.com/recipes/chicken-tikka",
-    "tags": [
-      "indian_non_veg",
-      "dinner"
-    ]
+    "name": "Vegetable Dosa + Chutney",
+    "calories": 480,
+    "protein": 16,
+    "carbs": 72,
+    "fat": 12,
+    "link": "https://www.tarladalal.com/masala-dosa-1247r",
+    "tags": ["indian_veg", "vegan", "breakfast", "lunch"]
   },
   {
     "id": "m48",
-    "name": "Butter Chicken + Naan Variant 3",
-    "calories": 720,
-    "protein": 48,
-    "carbs": 54,
-    "fat": 34,
-    "link": "https://www.bbcgoodfood.com/recipes/butter-chicken",
-    "tags": [
-      "indian_non_veg",
-      "lunch",
-      "dinner"
-    ]
+    "name": "Egg Fried Rice",
+    "calories": 560,
+    "protein": 24,
+    "carbs": 72,
+    "fat": 18,
+    "link": "https://www.bbcgoodfood.com/recipes/egg-fried-rice",
+    "tags": ["global_non_veg", "indian_non_veg", "lunch", "dinner"]
   },
   {
     "id": "m49",
-    "name": "Egg Curry + Rice Variant 3",
-    "calories": 580,
-    "protein": 28,
-    "carbs": 66,
-    "fat": 18,
-    "link": "https://www.tarladalal.com/Egg-Curry-Recipe-40314r",
-    "tags": [
-      "indian_non_veg",
-      "lunch",
-      "dinner"
-    ]
+    "name": "Grilled Veggie Wrap",
+    "calories": 420,
+    "protein": 18,
+    "carbs": 58,
+    "fat": 12,
+    "link": "https://www.eatingwell.com/recipe/269319/grilled-veggie-wrap",
+    "tags": ["vegan", "balanced", "lunch", "snack"]
   },
   {
     "id": "m50",
-    "name": "Egg White Omelette + Toast Variant 3",
-    "calories": 380,
-    "protein": 28,
-    "carbs": 28,
-    "fat": 12,
-    "link": "https://www.eatingwell.com/recipe/270523/egg-white-omelet",
-    "tags": [
-      "global_non_veg",
-      "breakfast",
-      "balanced"
-    ]
-  },
-  {
-    "id": "m51",
-    "name": "Grilled Salmon + Quinoa Variant 3",
-    "calories": 560,
-    "protein": 42,
-    "carbs": 38,
-    "fat": 20,
-    "link": "https://www.eatingwell.com/recipe/279987/grilled-salmon",
-    "tags": [
-      "global_non_veg",
-      "dinner",
-      "balanced"
-    ]
-  },
-  {
-    "id": "m52",
-    "name": "Chicken Caesar Salad Variant 3",
-    "calories": 420,
-    "protein": 36,
-    "carbs": 22,
-    "fat": 18,
-    "link": "https://www.bbcgoodfood.com/recipes/chicken-caesar-salad",
-    "tags": [
-      "global_non_veg",
-      "salad",
-      "lunch"
-    ]
-  },
-  {
-    "id": "m53",
-    "name": "Hummus + Whole Wheat Pita Variant 3",
-    "calories": 420,
-    "protein": 14,
-    "carbs": 50,
-    "fat": 16,
-    "link": "https://www.bbcgoodfood.com/recipes/hummus",
-    "tags": [
-      "vegan",
-      "snack",
-      "balanced"
-    ]
-  },
-  {
-    "id": "m54",
-    "name": "Grilled Eggplant + Couscous Variant 3",
-    "calories": 480,
-    "protein": 18,
-    "carbs": 62,
-    "fat": 16,
-    "link": "https://www.eatingwell.com/recipe/249987/grilled-eggplant",
-    "tags": [
-      "vegan",
-      "balanced",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m55",
-    "name": "Minestrone Soup + Whole Wheat Bread Variant 3",
-    "calories": 360,
-    "protein": 14,
-    "carbs": 50,
-    "fat": 10,
-    "link": "https://www.bbcgoodfood.com/recipes/minestrone-soup",
-    "tags": [
-      "vegan",
-      "soup",
-      "balanced",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m56",
-    "name": "Vegan Buddha Bowl Variant 3",
-    "calories": 500,
-    "protein": 22,
-    "carbs": 68,
-    "fat": 14,
-    "link": "https://www.eatingwell.com/recipe/278928/vegan-buddha-bowl",
-    "tags": [
-      "vegan",
-      "lunch",
-      "balanced"
-    ]
-  },
-  {
-    "id": "m57",
-    "name": "Oats + Peanut Butter Bowl Variant 3",
-    "calories": 420,
-    "protein": 20,
-    "carbs": 55,
-    "fat": 14,
-    "link": "https://www.eatingwell.com/recipe/267236/oatmeal-with-peanut-butter",
-    "tags": [
-      "balanced",
-      "breakfast"
-    ]
-  },
-  {
-    "id": "m58",
-    "name": "Greek Yogurt + Berries Variant 3",
-    "calories": 260,
-    "protein": 18,
-    "carbs": 30,
-    "fat": 6,
-    "link": "https://www.eatingwell.com/recipe/272233/greek-yogurt-berries",
-    "tags": [
-      "balanced",
-      "snack"
-    ]
-  },
-  {
-    "id": "m59",
-    "name": "Protein Shake (Banana + Whey) Variant 3",
-    "calories": 320,
-    "protein": 28,
-    "carbs": 32,
-    "fat": 6,
-    "link": "https://www.eatingwell.com/recipe/272221/banana-protein-shake",
-    "tags": [
-      "balanced",
-      "shake",
-      "snack"
-    ]
-  },
-  {
-    "id": "m60",
-    "name": "Lentil Soup + Brown Bread Variant 3",
-    "calories": 400,
-    "protein": 22,
-    "carbs": 56,
-    "fat": 8,
-    "link": "https://www.bbcgoodfood.com/recipes/lentil-soup",
-    "tags": [
-      "vegan",
-      "soup",
-      "balanced",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m61",
-    "name": "Rajma + Brown Rice Variant 4",
-    "calories": 590,
-    "protein": 24,
-    "carbs": 92,
-    "fat": 12,
-    "link": "https://www.tarladalal.com/Rajma-Chawal-Recipe-39933r",
-    "tags": [
-      "indian_veg",
-      "vegan",
-      "lunch",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m62",
-    "name": "Moong Dal Cheela + Green Chutney Variant 4",
-    "calories": 380,
-    "protein": 20,
-    "carbs": 42,
-    "fat": 10,
-    "link": "https://www.tarladalal.com/Moong-Dal-Cheela-Recipe-39364r",
-    "tags": [
-      "indian_veg",
-      "vegan",
-      "breakfast",
-      "snack"
-    ]
-  },
-  {
-    "id": "m63",
-    "name": "Vegetable Pulao + Raita Variant 4",
-    "calories": 540,
-    "protein": 18,
-    "carbs": 82,
-    "fat": 14,
-    "link": "https://www.tarladalal.com/Vegetable-Pulao-Recipe-38901r",
-    "tags": [
-      "indian_veg",
-      "balanced",
-      "lunch",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m64",
-    "name": "Vegetable Khichdi Variant 4",
-    "calories": 460,
-    "protein": 18,
-    "carbs": 72,
-    "fat": 10,
-    "link": "https://www.tarladalal.com/Vegetable-Khichdi-38890r",
-    "tags": [
-      "indian_veg",
-      "vegan",
-      "balanced",
-      "lunch",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m65",
-    "name": "Paneer Bhurji + Roti Variant 4",
-    "calories": 480,
-    "protein": 28,
-    "carbs": 38,
-    "fat": 18,
-    "link": "https://www.tarladalal.com/Paneer-Bhurji-Recipe-28105r",
-    "tags": [
-      "indian_veg",
-      "lunch",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m66",
-    "name": "Masala Dosa + Sambar Variant 4",
-    "calories": 520,
-    "protein": 16,
-    "carbs": 80,
-    "fat": 12,
-    "link": "https://www.tarladalal.com/Masala-Dosa-Recipe-10941r",
-    "tags": [
-      "indian_veg",
-      "breakfast",
-      "balanced"
-    ]
-  },
-  {
-    "id": "m67",
-    "name": "Chicken Tikka + Salad Variant 4",
-    "calories": 540,
-    "protein": 46,
-    "carbs": 18,
-    "fat": 28,
-    "link": "https://www.bbcgoodfood.com/recipes/chicken-tikka",
-    "tags": [
-      "indian_non_veg",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m68",
-    "name": "Butter Chicken + Naan Variant 4",
-    "calories": 720,
-    "protein": 48,
-    "carbs": 54,
-    "fat": 34,
-    "link": "https://www.bbcgoodfood.com/recipes/butter-chicken",
-    "tags": [
-      "indian_non_veg",
-      "lunch",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m69",
-    "name": "Egg Curry + Rice Variant 4",
-    "calories": 580,
-    "protein": 28,
-    "carbs": 66,
-    "fat": 18,
-    "link": "https://www.tarladalal.com/Egg-Curry-Recipe-40314r",
-    "tags": [
-      "indian_non_veg",
-      "lunch",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m70",
-    "name": "Egg White Omelette + Toast Variant 4",
-    "calories": 380,
-    "protein": 28,
-    "carbs": 28,
-    "fat": 12,
-    "link": "https://www.eatingwell.com/recipe/270523/egg-white-omelet",
-    "tags": [
-      "global_non_veg",
-      "breakfast",
-      "balanced"
-    ]
-  },
-  {
-    "id": "m71",
-    "name": "Grilled Salmon + Quinoa Variant 4",
-    "calories": 560,
-    "protein": 42,
-    "carbs": 38,
-    "fat": 20,
-    "link": "https://www.eatingwell.com/recipe/279987/grilled-salmon",
-    "tags": [
-      "global_non_veg",
-      "dinner",
-      "balanced"
-    ]
-  },
-  {
-    "id": "m72",
-    "name": "Chicken Caesar Salad Variant 4",
-    "calories": 420,
-    "protein": 36,
-    "carbs": 22,
-    "fat": 18,
-    "link": "https://www.bbcgoodfood.com/recipes/chicken-caesar-salad",
-    "tags": [
-      "global_non_veg",
-      "salad",
-      "lunch"
-    ]
-  },
-  {
-    "id": "m73",
-    "name": "Hummus + Whole Wheat Pita Variant 4",
-    "calories": 420,
-    "protein": 14,
-    "carbs": 50,
-    "fat": 16,
-    "link": "https://www.bbcgoodfood.com/recipes/hummus",
-    "tags": [
-      "vegan",
-      "snack",
-      "balanced"
-    ]
-  },
-  {
-    "id": "m74",
-    "name": "Grilled Eggplant + Couscous Variant 4",
-    "calories": 480,
-    "protein": 18,
-    "carbs": 62,
-    "fat": 16,
-    "link": "https://www.eatingwell.com/recipe/249987/grilled-eggplant",
-    "tags": [
-      "vegan",
-      "balanced",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m75",
-    "name": "Minestrone Soup + Whole Wheat Bread Variant 4",
-    "calories": 360,
-    "protein": 14,
-    "carbs": 50,
-    "fat": 10,
-    "link": "https://www.bbcgoodfood.com/recipes/minestrone-soup",
-    "tags": [
-      "vegan",
-      "soup",
-      "balanced",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m76",
-    "name": "Vegan Buddha Bowl Variant 4",
-    "calories": 500,
-    "protein": 22,
-    "carbs": 68,
-    "fat": 14,
-    "link": "https://www.eatingwell.com/recipe/278928/vegan-buddha-bowl",
-    "tags": [
-      "vegan",
-      "lunch",
-      "balanced"
-    ]
-  },
-  {
-    "id": "m77",
-    "name": "Oats + Peanut Butter Bowl Variant 4",
-    "calories": 420,
-    "protein": 20,
-    "carbs": 55,
-    "fat": 14,
-    "link": "https://www.eatingwell.com/recipe/267236/oatmeal-with-peanut-butter",
-    "tags": [
-      "balanced",
-      "breakfast"
-    ]
-  },
-  {
-    "id": "m78",
-    "name": "Greek Yogurt + Berries Variant 4",
-    "calories": 260,
-    "protein": 18,
-    "carbs": 30,
-    "fat": 6,
-    "link": "https://www.eatingwell.com/recipe/272233/greek-yogurt-berries",
-    "tags": [
-      "balanced",
-      "snack"
-    ]
-  },
-  {
-    "id": "m79",
-    "name": "Protein Shake (Banana + Whey) Variant 4",
-    "calories": 320,
-    "protein": 28,
-    "carbs": 32,
-    "fat": 6,
-    "link": "https://www.eatingwell.com/recipe/272221/banana-protein-shake",
-    "tags": [
-      "balanced",
-      "shake",
-      "snack"
-    ]
-  },
-  {
-    "id": "m80",
-    "name": "Lentil Soup + Brown Bread Variant 4",
-    "calories": 400,
-    "protein": 22,
-    "carbs": 56,
-    "fat": 8,
-    "link": "https://www.bbcgoodfood.com/recipes/lentil-soup",
-    "tags": [
-      "vegan",
-      "soup",
-      "balanced",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m81",
-    "name": "Rajma + Brown Rice Variant 5",
-    "calories": 590,
-    "protein": 24,
-    "carbs": 92,
-    "fat": 12,
-    "link": "https://www.tarladalal.com/Rajma-Chawal-Recipe-39933r",
-    "tags": [
-      "indian_veg",
-      "vegan",
-      "lunch",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m82",
-    "name": "Moong Dal Cheela + Green Chutney Variant 5",
-    "calories": 380,
-    "protein": 20,
-    "carbs": 42,
-    "fat": 10,
-    "link": "https://www.tarladalal.com/Moong-Dal-Cheela-Recipe-39364r",
-    "tags": [
-      "indian_veg",
-      "vegan",
-      "breakfast",
-      "snack"
-    ]
-  },
-  {
-    "id": "m83",
-    "name": "Vegetable Pulao + Raita Variant 5",
-    "calories": 540,
-    "protein": 18,
-    "carbs": 82,
-    "fat": 14,
-    "link": "https://www.tarladalal.com/Vegetable-Pulao-Recipe-38901r",
-    "tags": [
-      "indian_veg",
-      "balanced",
-      "lunch",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m84",
-    "name": "Vegetable Khichdi Variant 5",
-    "calories": 460,
-    "protein": 18,
-    "carbs": 72,
-    "fat": 10,
-    "link": "https://www.tarladalal.com/Vegetable-Khichdi-38890r",
-    "tags": [
-      "indian_veg",
-      "vegan",
-      "balanced",
-      "lunch",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m85",
-    "name": "Paneer Bhurji + Roti Variant 5",
-    "calories": 480,
-    "protein": 28,
-    "carbs": 38,
-    "fat": 18,
-    "link": "https://www.tarladalal.com/Paneer-Bhurji-Recipe-28105r",
-    "tags": [
-      "indian_veg",
-      "lunch",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m86",
-    "name": "Masala Dosa + Sambar Variant 5",
-    "calories": 520,
-    "protein": 16,
-    "carbs": 80,
-    "fat": 12,
-    "link": "https://www.tarladalal.com/Masala-Dosa-Recipe-10941r",
-    "tags": [
-      "indian_veg",
-      "breakfast",
-      "balanced"
-    ]
-  },
-  {
-    "id": "m87",
-    "name": "Chicken Tikka + Salad Variant 5",
-    "calories": 540,
-    "protein": 46,
-    "carbs": 18,
-    "fat": 28,
-    "link": "https://www.bbcgoodfood.com/recipes/chicken-tikka",
-    "tags": [
-      "indian_non_veg",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m88",
-    "name": "Butter Chicken + Naan Variant 5",
-    "calories": 720,
-    "protein": 48,
-    "carbs": 54,
-    "fat": 34,
-    "link": "https://www.bbcgoodfood.com/recipes/butter-chicken",
-    "tags": [
-      "indian_non_veg",
-      "lunch",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m89",
-    "name": "Egg Curry + Rice Variant 5",
-    "calories": 580,
-    "protein": 28,
-    "carbs": 66,
-    "fat": 18,
-    "link": "https://www.tarladalal.com/Egg-Curry-Recipe-40314r",
-    "tags": [
-      "indian_non_veg",
-      "lunch",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m90",
-    "name": "Egg White Omelette + Toast Variant 5",
-    "calories": 380,
-    "protein": 28,
-    "carbs": 28,
-    "fat": 12,
-    "link": "https://www.eatingwell.com/recipe/270523/egg-white-omelet",
-    "tags": [
-      "global_non_veg",
-      "breakfast",
-      "balanced"
-    ]
-  },
-  {
-    "id": "m91",
-    "name": "Grilled Salmon + Quinoa Variant 5",
-    "calories": 560,
-    "protein": 42,
-    "carbs": 38,
-    "fat": 20,
-    "link": "https://www.eatingwell.com/recipe/279987/grilled-salmon",
-    "tags": [
-      "global_non_veg",
-      "dinner",
-      "balanced"
-    ]
-  },
-  {
-    "id": "m92",
-    "name": "Chicken Caesar Salad Variant 5",
-    "calories": 420,
-    "protein": 36,
-    "carbs": 22,
-    "fat": 18,
-    "link": "https://www.bbcgoodfood.com/recipes/chicken-caesar-salad",
-    "tags": [
-      "global_non_veg",
-      "salad",
-      "lunch"
-    ]
-  },
-  {
-    "id": "m93",
-    "name": "Hummus + Whole Wheat Pita Variant 5",
-    "calories": 420,
-    "protein": 14,
-    "carbs": 50,
-    "fat": 16,
-    "link": "https://www.bbcgoodfood.com/recipes/hummus",
-    "tags": [
-      "vegan",
-      "snack",
-      "balanced"
-    ]
-  },
-  {
-    "id": "m94",
-    "name": "Grilled Eggplant + Couscous Variant 5",
-    "calories": 480,
-    "protein": 18,
-    "carbs": 62,
-    "fat": 16,
-    "link": "https://www.eatingwell.com/recipe/249987/grilled-eggplant",
-    "tags": [
-      "vegan",
-      "balanced",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m95",
-    "name": "Minestrone Soup + Whole Wheat Bread Variant 5",
-    "calories": 360,
-    "protein": 14,
-    "carbs": 50,
-    "fat": 10,
-    "link": "https://www.bbcgoodfood.com/recipes/minestrone-soup",
-    "tags": [
-      "vegan",
-      "soup",
-      "balanced",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m96",
-    "name": "Vegan Buddha Bowl Variant 5",
-    "calories": 500,
-    "protein": 22,
-    "carbs": 68,
-    "fat": 14,
-    "link": "https://www.eatingwell.com/recipe/278928/vegan-buddha-bowl",
-    "tags": [
-      "vegan",
-      "lunch",
-      "balanced"
-    ]
-  },
-  {
-    "id": "m97",
-    "name": "Oats + Peanut Butter Bowl Variant 5",
-    "calories": 420,
-    "protein": 20,
-    "carbs": 55,
-    "fat": 14,
-    "link": "https://www.eatingwell.com/recipe/267236/oatmeal-with-peanut-butter",
-    "tags": [
-      "balanced",
-      "breakfast"
-    ]
-  },
-  {
-    "id": "m98",
-    "name": "Greek Yogurt + Berries Variant 5",
-    "calories": 260,
-    "protein": 18,
-    "carbs": 30,
-    "fat": 6,
-    "link": "https://www.eatingwell.com/recipe/272233/greek-yogurt-berries",
-    "tags": [
-      "balanced",
-      "snack"
-    ]
-  },
-  {
-    "id": "m99",
-    "name": "Protein Shake (Banana + Whey) Variant 5",
-    "calories": 320,
-    "protein": 28,
-    "carbs": 32,
-    "fat": 6,
-    "link": "https://www.eatingwell.com/recipe/272221/banana-protein-shake",
-    "tags": [
-      "balanced",
-      "shake",
-      "snack"
-    ]
-  },
-  {
-    "id": "m100",
-    "name": "Lentil Soup + Brown Bread Variant 5",
-    "calories": 400,
-    "protein": 22,
-    "carbs": 56,
-    "fat": 8,
-    "link": "https://www.bbcgoodfood.com/recipes/lentil-soup",
-    "tags": [
-      "vegan",
-      "soup",
-      "balanced",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m101",
-    "name": "Rajma + Brown Rice Variant 6",
-    "calories": 590,
-    "protein": 24,
-    "carbs": 92,
-    "fat": 12,
-    "link": "https://www.tarladalal.com/Rajma-Chawal-Recipe-39933r",
-    "tags": [
-      "indian_veg",
-      "vegan",
-      "lunch",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m102",
-    "name": "Moong Dal Cheela + Green Chutney Variant 6",
-    "calories": 380,
-    "protein": 20,
-    "carbs": 42,
-    "fat": 10,
-    "link": "https://www.tarladalal.com/Moong-Dal-Cheela-Recipe-39364r",
-    "tags": [
-      "indian_veg",
-      "vegan",
-      "breakfast",
-      "snack"
-    ]
-  },
-  {
-    "id": "m103",
-    "name": "Vegetable Pulao + Raita Variant 6",
-    "calories": 540,
-    "protein": 18,
-    "carbs": 82,
-    "fat": 14,
-    "link": "https://www.tarladalal.com/Vegetable-Pulao-Recipe-38901r",
-    "tags": [
-      "indian_veg",
-      "balanced",
-      "lunch",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m104",
-    "name": "Vegetable Khichdi Variant 6",
-    "calories": 460,
-    "protein": 18,
-    "carbs": 72,
-    "fat": 10,
-    "link": "https://www.tarladalal.com/Vegetable-Khichdi-38890r",
-    "tags": [
-      "indian_veg",
-      "vegan",
-      "balanced",
-      "lunch",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m105",
-    "name": "Paneer Bhurji + Roti Variant 6",
-    "calories": 480,
-    "protein": 28,
-    "carbs": 38,
-    "fat": 18,
-    "link": "https://www.tarladalal.com/Paneer-Bhurji-Recipe-28105r",
-    "tags": [
-      "indian_veg",
-      "lunch",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m106",
-    "name": "Masala Dosa + Sambar Variant 6",
-    "calories": 520,
-    "protein": 16,
-    "carbs": 80,
-    "fat": 12,
-    "link": "https://www.tarladalal.com/Masala-Dosa-Recipe-10941r",
-    "tags": [
-      "indian_veg",
-      "breakfast",
-      "balanced"
-    ]
-  },
-  {
-    "id": "m107",
-    "name": "Chicken Tikka + Salad Variant 6",
-    "calories": 540,
-    "protein": 46,
-    "carbs": 18,
-    "fat": 28,
-    "link": "https://www.bbcgoodfood.com/recipes/chicken-tikka",
-    "tags": [
-      "indian_non_veg",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m108",
-    "name": "Butter Chicken + Naan Variant 6",
-    "calories": 720,
-    "protein": 48,
-    "carbs": 54,
-    "fat": 34,
-    "link": "https://www.bbcgoodfood.com/recipes/butter-chicken",
-    "tags": [
-      "indian_non_veg",
-      "lunch",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m109",
-    "name": "Egg Curry + Rice Variant 6",
-    "calories": 580,
-    "protein": 28,
-    "carbs": 66,
-    "fat": 18,
-    "link": "https://www.tarladalal.com/Egg-Curry-Recipe-40314r",
-    "tags": [
-      "indian_non_veg",
-      "lunch",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m110",
-    "name": "Egg White Omelette + Toast Variant 6",
-    "calories": 380,
-    "protein": 28,
-    "carbs": 28,
-    "fat": 12,
-    "link": "https://www.eatingwell.com/recipe/270523/egg-white-omelet",
-    "tags": [
-      "global_non_veg",
-      "breakfast",
-      "balanced"
-    ]
-  },
-  {
-    "id": "m111",
-    "name": "Grilled Salmon + Quinoa Variant 6",
-    "calories": 560,
-    "protein": 42,
-    "carbs": 38,
-    "fat": 20,
-    "link": "https://www.eatingwell.com/recipe/279987/grilled-salmon",
-    "tags": [
-      "global_non_veg",
-      "dinner",
-      "balanced"
-    ]
-  },
-  {
-    "id": "m112",
-    "name": "Chicken Caesar Salad Variant 6",
-    "calories": 420,
-    "protein": 36,
-    "carbs": 22,
-    "fat": 18,
-    "link": "https://www.bbcgoodfood.com/recipes/chicken-caesar-salad",
-    "tags": [
-      "global_non_veg",
-      "salad",
-      "lunch"
-    ]
-  },
-  {
-    "id": "m113",
-    "name": "Hummus + Whole Wheat Pita Variant 6",
-    "calories": 420,
-    "protein": 14,
-    "carbs": 50,
-    "fat": 16,
-    "link": "https://www.bbcgoodfood.com/recipes/hummus",
-    "tags": [
-      "vegan",
-      "snack",
-      "balanced"
-    ]
-  },
-  {
-    "id": "m114",
-    "name": "Grilled Eggplant + Couscous Variant 6",
-    "calories": 480,
-    "protein": 18,
-    "carbs": 62,
-    "fat": 16,
-    "link": "https://www.eatingwell.com/recipe/249987/grilled-eggplant",
-    "tags": [
-      "vegan",
-      "balanced",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m115",
-    "name": "Minestrone Soup + Whole Wheat Bread Variant 6",
-    "calories": 360,
-    "protein": 14,
-    "carbs": 50,
-    "fat": 10,
-    "link": "https://www.bbcgoodfood.com/recipes/minestrone-soup",
-    "tags": [
-      "vegan",
-      "soup",
-      "balanced",
-      "dinner"
-    ]
-  },
-  {
-    "id": "m116",
-    "name": "Vegan Buddha Bowl Variant 6",
-    "calories": 500,
-    "protein": 22,
-    "carbs": 68,
-    "fat": 14,
-    "link": "https://www.eatingwell.com/recipe/278928/vegan-buddha-bowl",
-    "tags": [
-      "vegan",
-      "lunch",
-      "balanced"
-    ]
-  },
-  {
-    "id": "m117",
-    "name": "Oats + Peanut Butter Bowl Variant 6",
-    "calories": 420,
-    "protein": 20,
-    "carbs": 55,
-    "fat": 14,
-    "link": "https://www.eatingwell.com/recipe/267236/oatmeal-with-peanut-butter",
-    "tags": [
-      "balanced",
-      "breakfast"
-    ]
-  },
-  {
-    "id": "m118",
-    "name": "Greek Yogurt + Berries Variant 6",
-    "calories": 260,
-    "protein": 18,
-    "carbs": 30,
-    "fat": 6,
-    "link": "https://www.eatingwell.com/recipe/272233/greek-yogurt-berries",
-    "tags": [
-      "balanced",
-      "snack"
-    ]
-  },
-  {
-    "id": "m119",
-    "name": "Protein Shake (Banana + Whey) Variant 6",
-    "calories": 320,
-    "protein": 28,
-    "carbs": 32,
-    "fat": 6,
-    "link": "https://www.eatingwell.com/recipe/272221/banana-protein-shake",
-    "tags": [
-      "balanced",
-      "shake",
-      "snack"
-    ]
-  },
-  {
-    "id": "m120",
-    "name": "Lentil Soup + Brown Bread Variant 6",
-    "calories": 400,
-    "protein": 22,
-    "carbs": 56,
-    "fat": 8,
-    "link": "https://www.bbcgoodfood.com/recipes/lentil-soup",
-    "tags": [
-      "vegan",
-      "soup",
-      "balanced",
-      "dinner"
-    ]
+    "name": "Fruit Bowl (Seasonal)",
+    "calories": 220,
+    "protein": 6,
+    "carbs": 48,
+    "fat": 2,
+    "link": "https://www.healthline.com/nutrition/fruit-diet",
+    "tags": ["vegan", "snack", "balanced", "breakfast"]
   }
 ]
